@@ -1,7 +1,7 @@
 ## Installation
 
 ```bash
-git clone https://github.com/uroslazarevic/React-sass-app.git
+git clone https://github.com/uroslazarevic/YTS-React-App.git
 cd React-sass-app
 ```
 
