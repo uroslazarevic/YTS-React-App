@@ -2,7 +2,7 @@
 
 ```bash
 git clone https://github.com/uroslazarevic/YTS-React-App.git
-cd React-sass-app
+cd YTS-React-App
 ```
 
 ## Get started
