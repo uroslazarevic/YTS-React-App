@@ -1,0 +1,19 @@
+/* YTS Description Component */
+.home-title {
+  font-weight: 700;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+  margin-bottom: 15px;
+  text-align: center;
+  color: #fff; }
+
+.home-text {
+  text-align: center;
+  font-size: .95em;
+  color: #ccc;
+  width: 650px;
+  margin: 0 auto;
+  line-height: 21px;
+  margin-bottom: 30px; }
+  .home-text span {
+    font-weight: bold;
+    color: #6AC045; }

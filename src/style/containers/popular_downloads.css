@@ -1,0 +1,92 @@
+/* Popular Downloads Container*/
+.popular-movies-title {
+  font-size: 1.15em;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 20px;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #fff; }
+  .popular-movies-title span i {
+    font-weight: bold;
+    color: #6AC045;
+    font-size: 18px;
+    transform: scale(0.8888, 1); }
+
+.popular-dl-movie {
+  width: 200px;
+  margin: 0 auto;
+  position: relative; }
+  .popular-dl-movie .popular-dl-img {
+    cursor: pointer; }
+    .popular-dl-movie .popular-dl-img:before {
+      content: '';
+      color: #fff;
+      height: 305px;
+      width: 190px;
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      background: rgba(0, 0, 0, 0.7);
+      opacity: 0; }
+    .popular-dl-movie .popular-dl-img:hover img {
+      border: 5px solid #6ac045; }
+    .popular-dl-movie .popular-dl-img:hover:before, .popular-dl-movie .popular-dl-img:hover .hidden-details {
+      opacity: 1; }
+    .popular-dl-movie .popular-dl-img:hover .hidden-details .hidden-details-btn {
+      margin-top: 40px;
+      transition: 0.25s all ease-in; }
+    .popular-dl-movie .popular-dl-img .hidden-details {
+      text-align: center;
+      opacity: 0;
+      transition: 0.25s all ease-in;
+      color: #fff;
+      position: absolute;
+      top: 0;
+      width: 200px;
+      padding-top: 40px;
+      left: 0;
+      pointer-events: none; }
+      .popular-dl-movie .popular-dl-img .hidden-details i {
+        font-size: 25px;
+        transform: scale(0.83611, 1);
+        color: #6ac045; }
+      .popular-dl-movie .popular-dl-img .hidden-details .hidden-details-rating {
+        font-size: 25px;
+        margin-bottom: 20px;
+        font-weight: bold; }
+      .popular-dl-movie .popular-dl-img .hidden-details .hidden-details-genre {
+        font-size: 25px;
+        font-weight: bold; }
+      .popular-dl-movie .popular-dl-img .hidden-details .hidden-details-btn {
+        cursor: pointer;
+        pointer-events: fill !important;
+        transition: 0.25s all ease-in;
+        font-weight: bold;
+        color: #fff;
+        border-radius: 3px;
+        background: #6ac045;
+        width: 130px;
+        text-align: center;
+        height: 36px;
+        line-height: 36px;
+        margin: 75px auto 0 auto;
+        font-size: 16px; }
+        .popular-dl-movie .popular-dl-img .hidden-details .hidden-details-btn:hover {
+          background: #5da93c; }
+    .popular-dl-movie .popular-dl-img img {
+      height: 315px;
+      width: 200px;
+      border: 5px solid #fff;
+      cursor: pointer; }
+  .popular-dl-movie .popular-dl-title {
+    font-size: 0.95em;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer; }
+    .popular-dl-movie .popular-dl-title:hover {
+      color: #919191;
+      transition: 0.25s all ease-in; }
+  .popular-dl-movie .popular-dl-movieYear {
+    font-size: .85em;
+    color: #919191; }

@@ -1,1 +1,8 @@
+// Components styles
+@import './style/components/navbar.scss';
+@import './style/components/searched_movies.scss';
+@import './style/components/yts_description.scss';
+
+// Containers styles
 @import './style/containers/app.scss';
+@import './style/containers/popular_downloads.scss';

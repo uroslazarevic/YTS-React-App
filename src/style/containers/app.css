@@ -1,3 +1,5 @@
-.test h3 {
-  background: #f4f4f4;
-  text-align: center; }
+/*  App Container  */
+.home-content {
+  height: 1030px;
+  background: #353333;
+  padding-top: 110px; }
