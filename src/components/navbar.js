@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
-import logo from '../images/yts-logo.png'
+import logo from '../images/yts-logo.png';
 import SearchBar from '../containers/search_bar';
 
 

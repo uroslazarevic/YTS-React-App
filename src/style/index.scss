@@ -2,7 +2,8 @@
 @import './style/components/navbar.scss';
 @import './style/components/searched_movies.scss';
 @import './style/components/yts_description.scss';
+@import './style/components/app.scss';
 
 // Containers styles
-@import './style/containers/app.scss';
 @import './style/containers/popular_downloads.scss';
+@import './style/containers/latest_torrents.scss';

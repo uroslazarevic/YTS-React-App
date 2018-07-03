@@ -16,13 +16,13 @@
     transform: scale(0.8888, 1);
   }
 }
-.popular-dl-movie {
+.detail-movie {
   width: 200px;
   margin: 0 auto;
   position: relative;
   // transition: 0.25s all ease-in;
 
-  .popular-dl-img {
+  .detail-img {
     cursor: pointer;
 
     &:before {
@@ -116,7 +116,7 @@
     }
   } 
 
-  .popular-dl-title {
+  .detail-title {
     font: {
       size: 0.95em;
       weight: 700;
@@ -130,7 +130,7 @@
     }
   }
 
-  .popular-dl-movieYear {
+  .detail-movieYear {
     font-size: .85em;
     color: #919191;
   }

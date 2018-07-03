@@ -79,6 +79,11 @@ ul {
         font-size: 12px; }
 
 /* YTS Description Component */
+.navbar-position-div {
+  width: 100%;
+  height: 110px;
+  background-color: rgba(255, 255, 255, 0); }
+
 .home-title {
   font-weight: 700;
   text-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
@@ -98,11 +103,18 @@ ul {
     font-weight: bold;
     color: #6AC045; }
 
-/*  App Container  */
+/* App component */
+.content-wrapper {
+  padding: 40px 0;
+  max-width: 1400px;
+  margin: 0 auto; }
+
 .home-content {
-  height: 1030px;
-  background: #353333;
-  padding-top: 110px; }
+  background: #353333; }
+
+@media (max-width: 1400px) {
+  .content-wrapper {
+    max-width: 1150px; } }
 
 /* Popular Downloads Container*/
 .popular-movies-title {
@@ -119,13 +131,13 @@ ul {
     font-size: 18px;
     transform: scale(0.8888, 1); }
 
-.popular-dl-movie {
+.detail-movie {
   width: 200px;
   margin: 0 auto;
   position: relative; }
-  .popular-dl-movie .popular-dl-img {
+  .detail-movie .detail-img {
     cursor: pointer; }
-    .popular-dl-movie .popular-dl-img:before {
+    .detail-movie .detail-img:before {
       content: '';
       color: #fff;
       height: 305px;
@@ -135,14 +147,14 @@ ul {
       left: 5px;
       background: rgba(0, 0, 0, 0.7);
       opacity: 0; }
-    .popular-dl-movie .popular-dl-img:hover img {
+    .detail-movie .detail-img:hover img {
       border: 5px solid #6ac045; }
-    .popular-dl-movie .popular-dl-img:hover:before, .popular-dl-movie .popular-dl-img:hover .hidden-details {
+    .detail-movie .detail-img:hover:before, .detail-movie .detail-img:hover .hidden-details {
       opacity: 1; }
-    .popular-dl-movie .popular-dl-img:hover .hidden-details .hidden-details-btn {
+    .detail-movie .detail-img:hover .hidden-details .hidden-details-btn {
       margin-top: 40px;
       transition: 0.25s all ease-in; }
-    .popular-dl-movie .popular-dl-img .hidden-details {
+    .detail-movie .detail-img .hidden-details {
       text-align: center;
       opacity: 0;
       transition: 0.25s all ease-in;
@@ -153,18 +165,18 @@ ul {
       padding-top: 40px;
       left: 0;
       pointer-events: none; }
-      .popular-dl-movie .popular-dl-img .hidden-details i {
+      .detail-movie .detail-img .hidden-details i {
         font-size: 25px;
         transform: scale(0.83611, 1);
         color: #6ac045; }
-      .popular-dl-movie .popular-dl-img .hidden-details .hidden-details-rating {
+      .detail-movie .detail-img .hidden-details .hidden-details-rating {
         font-size: 25px;
         margin-bottom: 20px;
         font-weight: bold; }
-      .popular-dl-movie .popular-dl-img .hidden-details .hidden-details-genre {
+      .detail-movie .detail-img .hidden-details .hidden-details-genre {
         font-size: 25px;
         font-weight: bold; }
-      .popular-dl-movie .popular-dl-img .hidden-details .hidden-details-btn {
+      .detail-movie .detail-img .hidden-details .hidden-details-btn {
         cursor: pointer;
         pointer-events: fill !important;
         transition: 0.25s all ease-in;
@@ -178,21 +190,31 @@ ul {
         line-height: 36px;
         margin: 75px auto 0 auto;
         font-size: 16px; }
-        .popular-dl-movie .popular-dl-img .hidden-details .hidden-details-btn:hover {
+        .detail-movie .detail-img .hidden-details .hidden-details-btn:hover {
           background: #5da93c; }
-    .popular-dl-movie .popular-dl-img img {
+    .detail-movie .detail-img img {
       height: 315px;
       width: 200px;
       border: 5px solid #fff;
       cursor: pointer; }
-  .popular-dl-movie .popular-dl-title {
+  .detail-movie .detail-title {
     font-size: 0.95em;
     font-weight: 700;
     color: #fff;
     cursor: pointer; }
-    .popular-dl-movie .popular-dl-title:hover {
+    .detail-movie .detail-title:hover {
       color: #919191;
       transition: 0.25s all ease-in; }
-  .popular-dl-movie .popular-dl-movieYear {
+  .detail-movie .detail-movieYear {
     font-size: .85em;
     color: #919191; }
+
+/* Latest Torrents Container */
+.latest-torrents {
+  background: #171717; }
+  .latest-torrents-title {
+    font-size: 1.15em;
+    font-weight: 700;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+    color: #fff; }

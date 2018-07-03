@@ -1,0 +1,9 @@
+/* Latest Torrents Container */
+.latest-torrents {
+  background: #171717; }
+  .latest-torrents-title {
+    font-size: 1.15em;
+    font-weight: 700;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+    color: #fff; }
