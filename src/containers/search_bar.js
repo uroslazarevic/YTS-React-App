@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { SearchMovies } from '../actions';
+import { searchMovies } from '../actions';
 import SearchedMovies from '../components/searched_movies';
 
 class SearchBar extends Component {
@@ -17,8 +17,10 @@ class SearchBar extends Component {
   inputSearchTerm(e) {
     this.setState({inputTerm: e.target.value}, () => {
       // Condition for not rendering movies if the search string is ''
-      this.state.inputTerm ?
-      this.props.searchMovies(this.state.inputTerm) : ''
+      this.state.inputTerm ? 
+      this.props.searchMovies({query_term: this.state.inputTerm}
+      ) : null
+       
     });
   }
 
@@ -30,7 +32,7 @@ class SearchBar extends Component {
     }
     
     return searchedMovies.map(movie => {
-      return  <SearchedMovies movie={movie} />
+      return  <SearchedMovies key={movie.id} movie={movie} />
     });
   };
   
@@ -42,7 +44,7 @@ class SearchBar extends Component {
           value={this.state.inputTerm}
           placeholder="Quick search"
         />
-        <ul>
+        <ul className="rendered-movie-list">
          {this.renderMovies()}
         </ul>
       </div>
@@ -56,4 +58,4 @@ function mapStateToProps({ movies }) {
   };
 }
 
-export default connect(mapStateToProps, { searchMovies: SearchMovies  })(SearchBar);
+export default connect(mapStateToProps, { searchMovies  })(SearchBar);

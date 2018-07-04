@@ -1,28 +1,42 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getLatestTorrents } from '../actions';
-import RenderMovieCard from '../components/renderMovieCard';
+import { getLatestTorrents } from 'actions';
+import RenderMovieCard from 'components/render_movie_card';
+import _ from 'lodash';
 
 class LatestTorrents extends Component {
-  componentDidMount() {
+  componentWillMount() {
     this.props.getLatestTorrents();
-  }
+  };
 
   renderLatestMovies(){
     const { latestMovies } = this.props;
-    console.log(latestMovies)
 
-    return latestMovies.map( movie => {
-      const { genres } = movie;
+    return _.chunk(latestMovies, 4).map(
+       (movieArray, index) => {
 
-      return (
-        <RenderMovieCard 
-          movie={movie}
-          genres={genres}
-        />
-      );
-    })
-  }
+        function renderArray(){
+          return movieArray.map( movie => {
+            const { genres } = movie;
+
+            return (
+              <RenderMovieCard
+                key={movie.id}
+                movie={movie}
+                genres={genres}
+              />
+            );
+          });
+        }
+
+        return (
+          <div key={index} className="row">
+            {renderArray()}
+          </div>
+        );
+      }
+    );
+  };
   
   render() {
     return (
@@ -33,8 +47,8 @@ class LatestTorrents extends Component {
         </div>
       </div>
     );
-  }
-}
+  };
+};
 
 function mapStateToProps({ movies }) {
   return { latestMovies: movies.latestMovies };

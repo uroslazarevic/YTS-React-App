@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getPopularDownloads } from '../actions';
-import RenderMovieCard from '../components/renderMovieCard';
+import { getPopularDownloads } from 'actions';
+import RenderMovieCard from 'components/render_movie_card';
 
 class PopularDownloads extends Component {
-  componentDidMount() {
+  componentWillMount() {
     this.props.getPopularDownloads();
   }
 
   renderPopularDownloads(){
     const { popularDownloads } = this.props;
 
-    return popularDownloads.map(movie => {
+    return popularDownloads.map( movie => {
       const { genres } = movie;
       return ( 
        <RenderMovieCard 
+          key={movie.id}
           movie={movie} 
           genres={genres}
        />

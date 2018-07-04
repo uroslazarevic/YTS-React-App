@@ -1,0 +1,121 @@
+/* Render Movie Card Component */
+
+.detail-movie {
+  width: 200px;
+  margin: 0 auto;
+  position: relative;
+
+  .detail-img {
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      color: #fff;
+      height: 305px;
+      width: 190px;
+      position: absolute;
+      top:5px;
+      left: 5px;
+      background: rgba(0,0,0,0.7);
+      opacity: 0;
+    }
+
+    &:hover {
+      img {
+        border: 5px solid #6ac045;
+      }
+    }
+
+    &:hover:before, &:hover .hidden-details {
+      opacity: 1;
+    }
+
+    &:hover .hidden-details .hidden-details-btn {
+      margin-top: 40px;
+      transition: 0.25s all ease-in;
+    }
+
+    // Hidden Details div start
+
+    .hidden-details {
+      text-align: center;
+      opacity: 0;
+      transition: 0.25s all ease-in;
+      color: #fff;
+      position: absolute;
+      top: 0;
+      width: 200px;
+      padding-top: 40px;
+      left: 0;
+      pointer-events: none;
+  
+      i {
+       
+        font-size: 25px;
+        transform: scale(0.83611, 1);
+        color:#6ac045;
+        }
+  
+      .hidden-details-rating {
+        font-size: 25px;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+  
+      .hidden-details-genre {
+        font-size: 25px;
+        font-weight: bold;
+      }
+  
+      .hidden-details-btn {
+        cursor: pointer;
+        pointer-events: fill !important;
+        transition: 0.25s all ease-in;
+        font-weight: bold;
+        color: #fff;
+        border-radius: 3px;
+        background: #6ac045;
+        width: 130px;
+        text-align: center;
+        height: 36px;
+        line-height: 36px;
+        margin: 75px auto 0 auto;
+        font-size: 16px;
+  
+        &:hover {
+          background: #5da93c;
+        }
+      }
+    }
+
+    // Hidden Details div end
+
+    img {
+      height: 315px;
+      width: 200px;
+      border: 5px solid #fff;
+      cursor: pointer;
+  
+    }
+  } 
+
+  .detail-title {
+    font: {
+      size: 0.95em;
+      weight: 700;
+    }
+    color: #fff;
+    cursor: pointer;
+  
+    &:hover {
+      color: #919191;
+      transition: 0.25s all ease-in;
+    }
+  }
+
+  .detail-movieYear {
+    font-size: .85em;
+    color: #919191;
+  }
+
+}
