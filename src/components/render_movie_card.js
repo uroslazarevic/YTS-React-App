@@ -3,11 +3,12 @@ import noImage from '../images/no_image_available.jpeg';
 
 export default function (props) {
 
-  const { movie, genres } = props;
+  const { movie, genres, quality } = props;
 
   return (
     <div className="col-md-3 col-lg-3">
       <div className="detail-movie">
+        {renderMovieQuality(quality)}
         <div className="detail-img">
           <img src={renderMovieImg(movie)} alt='' />
           <div className="hidden-details">
@@ -22,7 +23,16 @@ export default function (props) {
       </div>
     </div> 
 );
-}
+};
+
+function renderMovieQuality(quality) {
+  return (
+    <div className="quality-banner">
+      {quality && quality === '1080p' ? <div className="detail-quality">{quality}</div> : <div></div>}
+      {quality && quality === '720p' ? <div className="detail-quality blue">{quality}</div> : <div></div>}
+    </div>
+  );
+};
 
 function renderMovieGenre(genres) {
   return genres ? (
@@ -30,9 +40,9 @@ function renderMovieGenre(genres) {
       return <div key={genre} className="hidden-details-style">{genre}</div>
     })
   ) : false;
-}
+};
 
 function renderMovieImg(movie) {
   const img = movie.large_cover_image;
   return img ? img : noImage;
-}
+};

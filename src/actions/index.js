@@ -6,6 +6,7 @@ const ROOT_URL='https://yts.am/api/v2/';
 export const SEARCH_MOVIES='SEARCH_MOVIES';
 export const POPULAR_DOWNLOADS='POPULAR_DOWNLOADS';
 export const LATEST_TORRENTS='LATEST_TORRENTS';
+export const UPCOMING_MOVIES='UPCOMING_MOVIES';
 
 export function searchMovies({ query_term = '', limit= 4 } = {}) {
   const data = {
@@ -48,3 +49,14 @@ export function getLatestTorrents({limit = 8, sort_by = 'date_added'} = {}) {
     payload: request
   };
 };
+
+export function getUpcomingMovies({limit= 4} = {}) {
+  const data = { limit };
+  const stringified = qs.stringify(data);
+
+  const request = axios.get(`${ROOT_URL}list_upcoming.json`)
+  return {
+    type: UPCOMING_MOVIES,
+    payload: request
+  }
+}

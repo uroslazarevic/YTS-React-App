@@ -8,7 +8,9 @@ import './App.css';
 
 import reducers from './reducers';
 import promise from 'redux-promise';
-import App from './components/app.js';
+
+import { default as DefaultLayout } from './components/app.js';
+import Home from './components/home/home';
 import Movie from './containers/movie';
 import BrowseMovies from './containers/browse_movies';
 
@@ -19,9 +21,10 @@ ReactDOM.render(
     <BrowserRouter>
       <div>
         <Switch>
-          <Route path="/movie/:title" component={Movie} />
-          <Route path="/browse-movies" component={BrowseMovies} />
-          <Route path="/" component={App} />
+          <DefaultLayout route='/' component={Home} />
+          {/* <Route path="/" component={App} /> */}
+          {/* <Route path="/movie/:title" component={Movie} />
+          <Route path="/browse-movies" component={BrowseMovies} /> */}
         </Switch>
       </div>
     </BrowserRouter>

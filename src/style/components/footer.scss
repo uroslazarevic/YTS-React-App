@@ -1,0 +1,41 @@
+.footer {
+  background: #171717;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-top: 1px solid #2f2f2f;
+  text-align: center;
+  
+  ul {
+
+    span {
+      display: inline-block;
+      font-weight: bold;
+      font-size: 13px;
+      color: #fff;
+      padding-right: 5px;
+    }
+
+    li {
+      display: inline-block;
+      padding-right: 5px;
+
+      &:first-child {
+        color: #fff;
+        font-size: 16px;
+      }
+      
+      & a:nth-child(-n +1) {
+        display: inline-block;
+        font-weight: bold;
+        font-size: 13px;
+        text-decoration: none;
+        color: #919191;
+  
+        &:hover {
+          color: #fff;
+          transition: 0.3s ease-in all;
+        }
+      }
+    }
+  }
+}

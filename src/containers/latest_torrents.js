@@ -5,6 +5,7 @@ import RenderMovieCard from 'components/render_movie_card';
 import _ from 'lodash';
 
 class LatestTorrents extends Component {
+
   componentWillMount() {
     this.props.getLatestTorrents();
   };
@@ -15,22 +16,25 @@ class LatestTorrents extends Component {
     return _.chunk(latestMovies, 4).map(
        (movieArray, index) => {
 
-        function renderArray(){
+        const renderArray = () => {
           return movieArray.map( movie => {
-            const { genres } = movie;
+            const { genres, torrents } = movie;
+            const { quality } = torrents[torrents.length -1];
+            console.log(quality);
 
             return (
               <RenderMovieCard
                 key={movie.id}
                 movie={movie}
                 genres={genres}
+                quality= {quality}
               />
             );
           });
         }
 
         return (
-          <div key={index} className="row">
+          <div key={index} className="row" style={{marginBottom: '20px' }} >
             {renderArray()}
           </div>
         );
