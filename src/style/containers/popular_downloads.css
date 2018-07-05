@@ -1,0 +1,14 @@
+/* Popular Downloads Container*/
+.popular-movies-title {
+  font-size: 1.15em;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 20px;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #fff; }
+  .popular-movies-title span i {
+    font-weight: bold;
+    color: #6AC045;
+    font-size: 18px;
+    transform: scale(0.8888, 1); }

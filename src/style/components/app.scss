@@ -1,0 +1,17 @@
+/* App component */
+
+.content-wrapper {
+  padding: 40px 0;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.home-content {
+  background: #353333;
+}
+
+@media(max-width: 1400px) {
+  .content-wrapper {
+    max-width: 1150px;
+  }
+}

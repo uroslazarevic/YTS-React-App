@@ -1,0 +1,43 @@
+/* Navbar Component */
+#navbar {
+  height: 110px;
+  width: 100%;
+  background: #1d1d1d;
+  z-index: 1;
+  position: fixed; }
+  #navbar .logo {
+    padding-top: 5px; }
+    #navbar .logo img {
+      width: 150px;
+      height: 100px; }
+    #navbar .logo span {
+      color: #919191;
+      font-size: 18px; }
+  #navbar .col-md-6:last-child .navbar-right {
+    padding-top: 37.5px; }
+    #navbar .col-md-6:last-child .navbar-right div:first-child {
+      display: inline-block; }
+      #navbar .col-md-6:last-child .navbar-right div:first-child input {
+        width: 250px;
+        margin-right: 10px; }
+    #navbar .col-md-6:last-child .navbar-right .nav-links {
+      display: inline-block; }
+      #navbar .col-md-6:last-child .navbar-right .nav-links a {
+        display: inline-block;
+        padding: 0 10px;
+        font-weight: bold;
+        font-size: 13px;
+        text-decoration: none; }
+        #navbar .col-md-6:last-child .navbar-right .nav-links a:nth-child(-n+2) {
+          color: #919191; }
+          #navbar .col-md-6:last-child .navbar-right .nav-links a:nth-child(-n+2):hover {
+            color: #fff;
+            transition: 0.3s ease-in all; }
+        #navbar .col-md-6:last-child .navbar-right .nav-links a:nth-child(n+3) {
+          color: #fff; }
+          #navbar .col-md-6:last-child .navbar-right .nav-links a:nth-child(n+3):hover {
+            color: #919191;
+            transition: 0.3s ease-in all; }
+      #navbar .col-md-6:last-child .navbar-right .nav-links span {
+        padding: 0 10px;
+        color: #919191; }

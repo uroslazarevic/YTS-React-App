@@ -1,3 +1,223 @@
-.test h3 {
-  background: #f4f4f4;
-  text-align: center; }
+/* Navbar Component */
+#navbar {
+  height: 110px;
+  width: 100%;
+  background: #1d1d1d;
+  z-index: 1;
+  position: fixed; }
+  #navbar .logo {
+    padding-top: 5px; }
+    #navbar .logo img {
+      width: 150px;
+      height: 100px; }
+    #navbar .logo span {
+      color: #919191;
+      font-size: 18px; }
+  #navbar .col-md-6:last-child .navbar-right {
+    padding-top: 37.5px; }
+    #navbar .col-md-6:last-child .navbar-right div:first-child {
+      display: inline-block; }
+      #navbar .col-md-6:last-child .navbar-right div:first-child input {
+        width: 250px;
+        margin-right: 10px; }
+    #navbar .col-md-6:last-child .navbar-right .nav-links {
+      display: inline-block; }
+      #navbar .col-md-6:last-child .navbar-right .nav-links a {
+        display: inline-block;
+        padding: 0 10px;
+        font-weight: bold;
+        font-size: 13px;
+        text-decoration: none; }
+        #navbar .col-md-6:last-child .navbar-right .nav-links a:nth-child(-n+2) {
+          color: #919191; }
+          #navbar .col-md-6:last-child .navbar-right .nav-links a:nth-child(-n+2):hover {
+            color: #fff;
+            transition: 0.3s ease-in all; }
+        #navbar .col-md-6:last-child .navbar-right .nav-links a:nth-child(n+3) {
+          color: #fff; }
+          #navbar .col-md-6:last-child .navbar-right .nav-links a:nth-child(n+3):hover {
+            color: #919191;
+            transition: 0.3s ease-in all; }
+      #navbar .col-md-6:last-child .navbar-right .nav-links span {
+        padding: 0 10px;
+        color: #919191; }
+
+/* Searched Movies Component */
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+  ul.rendered-movie-list {
+    position: absolute; }
+  ul li {
+    width: 250px;
+    padding: 10px;
+    height: 85px;
+    background-color: #3d3d3d;
+    clear: both;
+    cursor: pointer;
+    overflow: hidden; }
+    ul li:hover {
+      background: #adacac; }
+    ul li .searched-movie-img {
+      float: left; }
+      ul li .searched-movie-img img {
+        width: 43px;
+        height: 63px;
+        margin-right: 15px; }
+    ul li .movie-info-short {
+      float: right;
+      width: 172px; }
+      ul li .movie-info-short .searched-movie-title {
+        line-height: 18px;
+        padding: 5px 0;
+        margin-left: 10px;
+        color: #fff;
+        font-size: 12px;
+        font-weight: bold; }
+      ul li .movie-info-short .searched-movie-year {
+        margin-left: 10px;
+        color: #919191;
+        font-size: 12px; }
+
+/* YTS Description Component */
+.navbar-position-div {
+  width: 100%;
+  height: 110px;
+  background-color: rgba(255, 255, 255, 0); }
+
+.home-title {
+  font-weight: 700;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+  margin-bottom: 15px;
+  text-align: center;
+  color: #fff; }
+
+.home-text {
+  text-align: center;
+  font-size: .95em;
+  color: #ccc;
+  width: 650px;
+  margin: 0 auto;
+  line-height: 21px;
+  margin-bottom: 30px; }
+  .home-text span {
+    font-weight: bold;
+    color: #6AC045; }
+
+/* App component */
+.content-wrapper {
+  padding: 40px 0;
+  max-width: 1400px;
+  margin: 0 auto; }
+
+.home-content {
+  background: #353333; }
+
+@media (max-width: 1400px) {
+  .content-wrapper {
+    max-width: 1150px; } }
+
+/* Render Movie Card Component */
+.detail-movie {
+  width: 200px;
+  margin: 0 auto;
+  position: relative; }
+  .detail-movie .detail-img {
+    cursor: pointer; }
+    .detail-movie .detail-img:before {
+      content: '';
+      color: #fff;
+      height: 305px;
+      width: 190px;
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      background: rgba(0, 0, 0, 0.7);
+      opacity: 0; }
+    .detail-movie .detail-img:hover img {
+      border: 5px solid #6ac045; }
+    .detail-movie .detail-img:hover:before, .detail-movie .detail-img:hover .hidden-details {
+      opacity: 1; }
+    .detail-movie .detail-img:hover .hidden-details .hidden-details-btn {
+      margin-top: 40px;
+      transition: 0.25s all ease-in; }
+    .detail-movie .detail-img .hidden-details {
+      text-align: center;
+      opacity: 0;
+      transition: 0.25s all ease-in;
+      color: #fff;
+      position: absolute;
+      top: 0;
+      width: 200px;
+      padding-top: 40px;
+      left: 0;
+      pointer-events: none; }
+      .detail-movie .detail-img .hidden-details i {
+        font-size: 25px;
+        transform: scale(0.83611, 1);
+        color: #6ac045; }
+      .detail-movie .detail-img .hidden-details .hidden-details-rating {
+        font-size: 25px;
+        margin-bottom: 20px;
+        font-weight: bold; }
+      .detail-movie .detail-img .hidden-details .hidden-details-genre {
+        font-size: 25px;
+        font-weight: bold; }
+      .detail-movie .detail-img .hidden-details .hidden-details-btn {
+        cursor: pointer;
+        pointer-events: fill !important;
+        transition: 0.25s all ease-in;
+        font-weight: bold;
+        color: #fff;
+        border-radius: 3px;
+        background: #6ac045;
+        width: 130px;
+        text-align: center;
+        height: 36px;
+        line-height: 36px;
+        margin: 75px auto 0 auto;
+        font-size: 16px; }
+        .detail-movie .detail-img .hidden-details .hidden-details-btn:hover {
+          background: #5da93c; }
+    .detail-movie .detail-img img {
+      height: 315px;
+      width: 200px;
+      border: 5px solid #fff;
+      cursor: pointer; }
+  .detail-movie .detail-title {
+    font-size: 0.95em;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer; }
+    .detail-movie .detail-title:hover {
+      color: #919191;
+      transition: 0.25s all ease-in; }
+  .detail-movie .detail-movieYear {
+    font-size: .85em;
+    color: #919191; }
+
+/* Popular Downloads Container*/
+.popular-movies-title {
+  font-size: 1.15em;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 20px;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #fff; }
+  .popular-movies-title span i {
+    font-weight: bold;
+    color: #6AC045;
+    font-size: 18px;
+    transform: scale(0.8888, 1); }
+
+/* Latest Torrents Container */
+.latest-torrents {
+  background: #171717; }
+  .latest-torrents-title {
+    font-size: 1.15em;
+    font-weight: 700;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+    color: #fff; }
