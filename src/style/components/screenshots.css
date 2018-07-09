@@ -1,0 +1,16 @@
+.screenshots {
+  overflow: hidden;
+  margin-top: 50px; }
+  .screenshots .screenshot {
+    display: inline-block;
+    width: 33%;
+    float: left; }
+    .screenshots .screenshot:nth-child(-n+3) {
+      padding-left: 10px; }
+    .screenshots .screenshot:first-child {
+      padding-left: 10px; }
+    .screenshots .screenshot:last-child {
+      padding-right: 10px; }
+    .screenshots .screenshot iframe, .screenshots .screenshot img {
+      height: 161.5px;
+      width: 100%; }

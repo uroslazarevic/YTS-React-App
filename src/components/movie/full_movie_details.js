@@ -4,14 +4,12 @@ import axios from 'axios';
 import { 
   getFullMovieDetails, 
   getMovieSuggestions
-  // getMovieComments,
-  // getMovieReviews,
-  // getMovieParentalGuides 
 } from 'actions';
 import Loading from 'components/loader';
 
 import MainMovieDetails from 'components/main_movie_info';
 import SimilarMovies from 'components/similar_movies';
+import Screenshots from 'components/screenshots';
 
 
 class FullMovieDetails extends Component {
@@ -62,6 +60,9 @@ class FullMovieDetails extends Component {
               <SimilarMovies similar={movieSuggestions} />
             </div>
           </div>
+          <div className="row">
+            <Screenshots info={movieDetails} />
+          </div>
         </div>
       </div>
     );
@@ -77,7 +78,4 @@ function mapStateToProps({ movie }) {
 export default connect(mapStateToProps, { 
   getFullMovieDetails,
   getMovieSuggestions
-  // getMovieComments,
-  // getMovieReviews,
-  // getMovieParentalGuides
  } )(FullMovieDetails)

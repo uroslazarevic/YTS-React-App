@@ -3,7 +3,6 @@ import loader from 'images/lg.vortex-spiral-spinner.gif';
 
 export default function (props) {
   const state = props.state;
-  console.log(state)
   
   return state ?(
       <div className="loader-bg" >

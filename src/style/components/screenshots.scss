@@ -1,0 +1,27 @@
+.screenshots {
+  overflow: hidden;
+  margin-top: 50px;
+  
+  .screenshot {
+    display: inline-block;
+    width: 33%;
+    float: left;
+    
+    &:nth-child(-n+3) {
+      padding-left: 10px;
+    }
+
+    &:first-child {
+      padding-left: 10px;
+    }
+
+    &:last-child {
+      padding-right: 10px;
+    }
+
+    iframe, img {
+      height: 161.5px;
+      width: 100%;
+    }
+  }
+}
