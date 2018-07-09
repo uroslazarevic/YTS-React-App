@@ -10,6 +10,7 @@ import Loading from 'components/loader';
 import MainMovieDetails from 'components/main_movie_info';
 import SimilarMovies from 'components/similar_movies';
 import Screenshots from 'components/screenshots';
+import MovieSubinfo from 'components/movie_subinfo';
 
 
 class FullMovieDetails extends Component {
@@ -62,6 +63,7 @@ class FullMovieDetails extends Component {
           </div>
           <div className="row">
             <Screenshots info={movieDetails} />
+            <MovieSubinfo info={movieDetails} />
           </div>
         </div>
       </div>

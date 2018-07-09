@@ -6,7 +6,6 @@ export default function({ info }) {
     medium_screenshot_image1,
     medium_screenshot_image2,
   } = info;
-  console.log(info)
 
   return (
     <div className="screenshots">
