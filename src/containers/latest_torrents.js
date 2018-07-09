@@ -20,7 +20,6 @@ class LatestTorrents extends Component {
           return movieArray.map( movie => {
             const { genres, torrents } = movie;
             const { quality } = torrents[torrents.length -1];
-            console.log(quality);
 
             return (
               <RenderMovieCard

@@ -9,9 +9,9 @@ import './App.css';
 import reducers from './reducers';
 import promise from 'redux-promise';
 
-import { default as DefaultLayout } from './components/app.js';
+import { default as DefaultLayout } from 'components/app.js';
 import Home from './components/home/home';
-import Movie from './containers/movie';
+import MovieDetails from 'components/movie/full_movie_details';
 import BrowseMovies from './containers/browse_movies';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
@@ -21,10 +21,9 @@ ReactDOM.render(
     <BrowserRouter>
       <div>
         <Switch>
+          <DefaultLayout path="/movie/:id" component={MovieDetails} />
           <DefaultLayout route='/' component={Home} />
-          {/* <Route path="/" component={App} /> */}
-          {/* <Route path="/movie/:title" component={Movie} />
-          <Route path="/browse-movies" component={BrowseMovies} /> */}
+          {/* <Route path="/browse-movies" component={BrowseMovies} /> */}
         </Switch>
       </div>
     </BrowserRouter>

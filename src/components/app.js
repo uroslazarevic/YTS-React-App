@@ -8,9 +8,9 @@ export default function({component: Component, ...rest}) {
    return (
      <Route {...rest} render = {matchProps => (
        <div>
-          <NavBar />
-          <Component {...matchProps} />
-          <Footer />
+        <NavBar />
+        <Component {...matchProps} />
+        <Footer />
        </div>
      )} />
    );

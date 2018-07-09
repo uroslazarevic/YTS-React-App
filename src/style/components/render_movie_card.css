@@ -1,4 +1,7 @@
 /* Render Movie Card Component */
+a {
+  text-decoration: none !important; }
+
 .detail-movie {
   width: 200px;
   margin: 0 auto;

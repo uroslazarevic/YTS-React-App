@@ -1,0 +1,25 @@
+.loader-bg {
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0, 0.6);
+  position: fixed;
+  z-index: 99;
+
+  .loader, .circle-of-light {
+    width: 60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  .circle-of-light {
+    width: 38px;
+    height: 37px;
+    top: 52%;
+    border-radius: 100%;
+    -webkit-box-shadow: 0px 0px 170px 20px rgba(255,255,255,1);
+    -moz-box-shadow: 0px 0px 170px 20px rgba(255,255,255,1);
+    box-shadow: 0px 0px 170px 20px white;
+  }
+}

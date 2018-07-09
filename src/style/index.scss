@@ -1,11 +1,22 @@
 // Components styles
+
+// Shared Pages
 @import './style/components/navbar.scss';
 @import './style/components/footer.scss';
+@import './style/components/loader.scss';
+
+// Home Page components
 @import './style/components/searched_movies.scss';
 @import './style/components/yts_description.scss';
 @import './style/components/home.scss';
 @import './style/components/render_movie_card.scss';
-
-// Containers styles
+//  Home Page containers
 @import './style/containers/popular_downloads.scss';
 @import './style/containers/latest_torrents.scss';
+
+// Movie Page components
+@import './style/components/main_movie_info.scss';
+@import './style/components/similar_movies.scss';
+
+// Movie Page containers
+@import './style/containers/full_movie_details.scss';

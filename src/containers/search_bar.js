@@ -10,10 +10,8 @@ class SearchBar extends Component {
 
     this.state = { inputTerm:'' }
     this.inputSearchTerm = this.inputSearchTerm.bind(this);
-  }
+  };
  
- 
-  
   inputSearchTerm(e) {
     this.setState({inputTerm: e.target.value}, () => {
       // Condition for not rendering movies if the search string is ''

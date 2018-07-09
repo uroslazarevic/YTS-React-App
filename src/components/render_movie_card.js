@@ -1,26 +1,29 @@
 import React from 'react';
 import noImage from '../images/no_image_available.jpeg';
+import { Link } from 'react-router-dom';
 
 export default function (props) {
 
   const { movie, genres, quality } = props;
-
+  // to={`/movie/${movie.id}`}
   return (
     <div className="col-md-3 col-lg-3">
-      <div className="detail-movie">
-        {renderMovieQuality(quality)}
-        <div className="detail-img">
-          <img src={renderMovieImg(movie)} alt='' />
-          <div className="hidden-details">
-            <div><i className="fas fa-star"></i></div>
-            <div className="hidden-details-rating">{movie.rating} / 10</div>
-            <div className="hidden-details-genre">{renderMovieGenre(genres)}</div>
-            <div className="hidden-details-btn">View Details</div>
+      <Link to={`/movie/${movie.id}`} >
+        <div className="detail-movie">
+          {renderMovieQuality(quality)}
+          <div className="detail-img">
+            <img src={renderMovieImg(movie)} alt='' />
+            <div className="hidden-details">
+              <div><i className="fas fa-star"></i></div>
+              <div className="hidden-details-rating">{movie.rating} / 10</div>
+              <div className="hidden-details-genre">{renderMovieGenre(genres)}</div>
+              <div className="hidden-details-btn">View Details</div>
+            </div>
           </div>
+          <div className="detail-title">{movie.title}</div>
+          <div className="detail-movieYear">{movie.year}</div>
         </div>
-        <div className="detail-title">{movie.title}</div>
-        <div className="detail-movieYear">{movie.year}</div>
-      </div>
+      </Link>
     </div> 
 );
 };
@@ -28,8 +31,8 @@ export default function (props) {
 function renderMovieQuality(quality) {
   return (
     <div className="quality-banner">
-      {quality && quality === '1080p' ? <div className="detail-quality">{quality}</div> : <div></div>}
-      {quality && quality === '720p' ? <div className="detail-quality blue">{quality}</div> : <div></div>}
+      {  quality === '1080p' ? <div className="detail-quality">{quality}</div> : <div></div>}
+      {  quality === '720p' ||  quality === '3D' ? <div className="detail-quality blue">{quality}</div> : <div></div>}
     </div>
   );
 };

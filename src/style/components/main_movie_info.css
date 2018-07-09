@@ -1,0 +1,88 @@
+/* Main Movie Info Component */
+.main-movie-info {
+  overflow: hidden; }
+  .main-movie-info .movie-poster {
+    text-align: center;
+    display: inline-block;
+    width: 50%;
+    float: left;
+    padding-right: 15px; }
+    .main-movie-info .movie-poster img {
+      height: 390px;
+      width: 260px;
+      background-size: cover;
+      border-radius: 4px;
+      border: 5px solid #fff; }
+    .main-movie-info .movie-poster .show-torrents-btn {
+      background: #6ac045;
+      transition: all 300ms ease;
+      border-radius: 3px;
+      width: 260px;
+      margin: 0 auto;
+      margin-top: 10px; }
+      .main-movie-info .movie-poster .show-torrents-btn:hover {
+        background: #5da93c; }
+      .main-movie-info .movie-poster .show-torrents-btn a {
+        display: block;
+        line-height: 39px;
+        color: #fff;
+        font-size: 1.1em;
+        font-weight: bold;
+        height: 39px; }
+        .main-movie-info .movie-poster .show-torrents-btn a span {
+          margin-right: 10px;
+          color: #428e21; }
+          .main-movie-info .movie-poster .show-torrents-btn a span .fa-download {
+            transform: scale(0.9727, 1); }
+  .main-movie-info .movie-info {
+    color: #fff;
+    display: inline-block;
+    width: 50%;
+    padding-left: 15px;
+    float: left; }
+    .main-movie-info .movie-info .title {
+      font-size: 2.5em;
+      margin-bottom: 24px;
+      line-height: 42px;
+      font-weight: bold; }
+    .main-movie-info .movie-info .year, .main-movie-info .movie-info .genres {
+      line-height: 24px;
+      font-size: 1.25em;
+      font-weight: bold; }
+    .main-movie-info .movie-info .torrents {
+      margin-top: 30px;
+      margin-bottom: 20px; }
+      .main-movie-info .movie-info .torrents em {
+        font-size: 1.1em;
+        padding-bottom: 10px;
+        display: inline-block; }
+      .main-movie-info .movie-info .torrents .torrent-block {
+        padding: 5px 12px;
+        background: rgba(27, 27, 35, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 4px;
+        font-size: .8em;
+        display: inline-block;
+        text-align: center;
+        color: #fff;
+        width: 90px;
+        margin-left: 6px; }
+        .main-movie-info .movie-info .torrents .torrent-block:hover {
+          color: #d5d5d5; }
+    .main-movie-info .movie-info .ratings .rating-row {
+      size: 1.1px;
+      font-weight: bold;
+      color: #fff;
+      padding-bottom: 10px; }
+      .main-movie-info .movie-info .ratings .rating-row span {
+        display: inline-block;
+        margin-right: 35px;
+        width: 40px; }
+        .main-movie-info .movie-info .ratings .rating-row span .fa-heart {
+          color: #6ac045;
+          transform: scale(1.069, 1.125);
+          padding-left: 2px; }
+        .main-movie-info .movie-info .ratings .rating-row span .fa-star {
+          color: #6ac045;
+          transform: scale(0.9505, 1.125);
+          padding-left: 6px; }

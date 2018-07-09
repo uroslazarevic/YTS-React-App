@@ -1,18 +1,13 @@
 /* Searched Movies Component */
 
-ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
- 
-.nav-links {
-
   ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
   
-    &.rendered-movie-list {
-      position: absolute;
-    }
+  ul.rendered-movie-list {
+    position: absolute;
   
     li{
       width: 250px;
@@ -56,4 +51,3 @@ ul {
       }
     }
   }
-}

@@ -4,36 +4,35 @@ ul {
   padding: 0;
   list-style-type: none; }
 
-.nav-links ul.rendered-movie-list {
+ul.rendered-movie-list {
   position: absolute; }
-
-.nav-links ul li {
-  width: 250px;
-  padding: 10px;
-  height: 85px;
-  background-color: #3d3d3d;
-  clear: both;
-  cursor: pointer;
-  overflow: hidden; }
-  .nav-links ul li:hover {
-    background: #adacac; }
-  .nav-links ul li .searched-movie-img {
-    float: left; }
-    .nav-links ul li .searched-movie-img img {
-      width: 43px;
-      height: 63px;
-      margin-right: 15px; }
-  .nav-links ul li .movie-info-short {
-    float: right;
-    width: 172px; }
-    .nav-links ul li .movie-info-short .searched-movie-title {
-      line-height: 18px;
-      padding: 5px 0;
-      margin-left: 10px;
-      color: #fff;
-      font-size: 12px;
-      font-weight: bold; }
-    .nav-links ul li .movie-info-short .searched-movie-year {
-      margin-left: 10px;
-      color: #919191;
-      font-size: 12px; }
+  ul.rendered-movie-list li {
+    width: 250px;
+    padding: 10px;
+    height: 85px;
+    background-color: #3d3d3d;
+    clear: both;
+    cursor: pointer;
+    overflow: hidden; }
+    ul.rendered-movie-list li:hover {
+      background: #adacac; }
+    ul.rendered-movie-list li .searched-movie-img {
+      float: left; }
+      ul.rendered-movie-list li .searched-movie-img img {
+        width: 43px;
+        height: 63px;
+        margin-right: 15px; }
+    ul.rendered-movie-list li .movie-info-short {
+      float: right;
+      width: 172px; }
+      ul.rendered-movie-list li .movie-info-short .searched-movie-title {
+        line-height: 18px;
+        padding: 5px 0;
+        margin-left: 10px;
+        color: #fff;
+        font-size: 12px;
+        font-weight: bold; }
+      ul.rendered-movie-list li .movie-info-short .searched-movie-year {
+        margin-left: 10px;
+        color: #919191;
+        font-size: 12px; }
