@@ -1,0 +1,33 @@
+.trailer-bg {
+  width: 100%;
+  position: fixed;
+  z-index: 99;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+  visibility: hidden; }
+  .trailer-bg .trailer {
+    width: 640px;
+    height: 424px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+    .trailer-bg .trailer iframe {
+      width: 640px;
+      height: 424px;
+      padding-top: 34px;
+      background: #000; }
+    .trailer-bg .trailer .close-trailer {
+      color: #919191;
+      width: 35px;
+      font-size: 40px;
+      line-height: 30px;
+      text-align: center;
+      position: absolute;
+      top: 0;
+      right: 15px; }
+      .trailer-bg .trailer .close-trailer:hover {
+        transition: all 0.15s ease-in;
+        color: #fff; }

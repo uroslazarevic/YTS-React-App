@@ -1,27 +1,61 @@
+/* Screenshots component */
+
 .screenshots {
   overflow: hidden;
   margin-top: 50px;
+  box-sizing: border-box;
   
   .screenshot {
     display: inline-block;
-    width: 33%;
+    width: 31%;
     float: left;
-    
+    position: relative;
+
+    &:hover {
+      transition: opacity .15s ease-in-out;
+      opacity: 0.65;
+    }
+
     &:nth-child(-n+3) {
-      padding-left: 10px;
+      margin-left: 10px;
     }
 
     &:first-child {
-      padding-left: 10px;
+      margin-left: 10px;
+      cursor: pointer;
     }
 
     &:last-child {
-      padding-right: 10px;
+      margin-right: 10px;
     }
 
-    iframe, img {
+    img {
       height: 161.5px;
       width: 100%;
+    }
+
+    .play-trailer {
+      height: 108px;
+      width: 85px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform:translate(-50%, -50%);
+
+      img {
+        width: 85px;
+        height: 85px;
+      }
+
+      .play-trailer-text {
+        color: #fff;
+        font-size: 14px;
+        line-height: 14px;
+        text-align: center;
+        padding-top: 7px;
+        font-weight: bold;
+      }
+
     }
   }
 }

@@ -3,7 +3,8 @@ import imdbLogo from '../images/IMDB_Logo_2016.png';
 import camCorder from '../images/camCorder.png';
 
 export default function({ info }) {
-  const { genres, torrents } = info;
+  console.log()
+  const { genres, torrents, imdb_code } = info;
   return (
     <div className="main-movie-info">
       <div className="movie-poster">
@@ -24,7 +25,7 @@ export default function({ info }) {
         <div className="ratings">
           <div className="rating-row"><span><i className="far fa-heart"></i></span>{info.like_count}</div>
           <div className="rating-row"><span><img src={camCorder} alt=""/></span>{info.runtime}min</div>
-          <div className="rating-row"><span><img src={imdbLogo} alt=""/></span>{info.rating}<span><i className="fas fa-star"></i></span></div>
+          <div className="rating-row"><a href={`https://www.imdb.com/title/${imdb_code}`}><span><img src={imdbLogo} alt=""/></span></a>{info.rating}<span><i className="fas fa-star"></i></span></div>
         </div>
       </div>
     </div>

@@ -11,6 +11,7 @@ import MainMovieDetails from 'components/main_movie_info';
 import SimilarMovies from 'components/similar_movies';
 import Screenshots from 'components/screenshots';
 import MovieSubinfo from 'components/movie_subinfo';
+import MovieTrailerModal from 'containers/movie_trailer_modal';
 
 
 class FullMovieDetails extends Component {
@@ -50,6 +51,7 @@ class FullMovieDetails extends Component {
     const { movieDetails, movieSuggestions } = this.props.movie;
     return (
       <div className="bg-full-movie-details">
+        <MovieTrailerModal trailer={ movieDetails.yt_trailer_code } />
         <Loading state={state}/>
         <div className="content-wrapper">
           <div className="row">
