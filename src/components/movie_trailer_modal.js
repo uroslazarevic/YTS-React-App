@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-export default function({trailer}) {
+export default function({trailer, closeTrailerModal}) {
   return (
-    <div onClick={closeTrailerModal} className="trailer-bg">
+    <div onClick={closeTrailerModal} className="trailer-container">
+      <div className="shading-bg"></div>
       <div className="trailer">
-        <iframe
+        <iframe className="iframe"
           title={trailer} 
           src={`https://www.youtube.com/embed/${trailer}`}
           frameBorder="0"
@@ -13,14 +14,4 @@ export default function({trailer}) {
       </div>
     </div>
   );
-}
-
-function closeTrailerModal(e) {
-  const target = e.target;
-  const trailerModal = document.querySelector('.trailer-bg');
-
-  if(target.classList.contains('close-trailer') || target.classList.contains('trailer-bg')) {
-    trailerModal.style.opacity= '0'
-    trailerModal.style.visibility ='hidden';
-  }
-}
+};

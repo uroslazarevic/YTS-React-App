@@ -1,7 +1,7 @@
 import React from 'react';
 import playBtn from '../images/play-btn.png';
 
-export default function({ info }) {
+export default function({ info, showTrailerModal }) {
   const {
     medium_screenshot_image1,
     medium_screenshot_image2,
@@ -27,10 +27,4 @@ export default function({ info }) {
       </div>
     </div>
   );
-}
-
-function showTrailerModal() {
-  const trailerModal = document.querySelector('.trailer-bg');
-  trailerModal.style.opacity = '1';
-  trailerModal.style.visibility = 'visible';
 }

@@ -1,33 +1,58 @@
-.trailer-bg {
-  width: 100%;
-  position: fixed;
-  z-index: 99;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.9);
-  cursor: pointer;
-  transition: all 0.2s ease-in;
-  visibility: hidden; }
-  .trailer-bg .trailer {
+/* Movie Trailer Component*/
+.spread-video-player {
+  width: 640px !important;
+  margin-top: 0px !important;
+  transition-property: width, margin !important;
+  transition: 0.1s !important;
+  transition-timing-function: ease-out !important;
+  transition-delay: 0.2s !important; }
+
+.animate-btn {
+  transition-delay: 0.2s;
+  transition-property: top, right !important;
+  transition: 0.1s ease-out !important;
+  top: -5px !important;
+  right: 0px !important; }
+
+.visible {
+  opacity: 1 !important;
+  visibility: visible !important; }
+
+.trailer-container {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease-in; }
+  .trailer-container .shading-bg {
+    width: 100%;
+    position: fixed;
+    z-index: 5;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    cursor: pointer; }
+  .trailer-container .trailer {
+    cursor: pointer;
+    z-index: 100;
     width: 640px;
-    height: 424px;
-    position: relative;
-    top: 50%;
+    height: 430px;
+    position: absolute;
     left: 50%;
-    transform: translate(-50%, -50%); }
-    .trailer-bg .trailer iframe {
-      width: 640px;
-      height: 424px;
-      padding-top: 34px;
+    transform: translate(-50%, 0);
+    padding-top: 40px; }
+    .trailer-container .trailer iframe {
+      width: 610px;
+      height: 390px;
+      padding-top: 15px;
+      margin-top: -15px;
       background: #000; }
-    .trailer-bg .trailer .close-trailer {
+    .trailer-container .trailer .close-trailer {
       color: #919191;
-      width: 35px;
-      font-size: 40px;
+      width: 30px;
+      font-size: 35px;
       line-height: 30px;
       text-align: center;
       position: absolute;
-      top: 0;
-      right: 15px; }
-      .trailer-bg .trailer .close-trailer:hover {
+      top: -20px;
+      right: 20px; }
+      .trailer-container .trailer .close-trailer:hover {
         transition: all 0.15s ease-in;
         color: #fff; }

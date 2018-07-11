@@ -11,14 +11,50 @@ import MainMovieDetails from 'components/main_movie_info';
 import SimilarMovies from 'components/similar_movies';
 import Screenshots from 'components/screenshots';
 import MovieSubinfo from 'components/movie_subinfo';
-import MovieTrailerModal from 'containers/movie_trailer_modal';
+import MovieTrailerModal from 'components/movie_trailer_modal';
 
 
 class FullMovieDetails extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {loading: true};
+    this.state = {
+      loading: true, 
+      showModal: true
+    };
+
+    this.showTrailerModal = this.showTrailerModal.bind(this);
+    this.closeTrailerModal = this.closeTrailerModal.bind(this);
+  }
+
+  showTrailerModal() {
+    let trailerPosition = window.screen.availHeight/2;
+    trailerPosition += window.pageYOffset - 430;
+    const trailerContainer = document.querySelector('.trailer-container');
+    const trailerModal = document.querySelector('.trailer');
+    const trailerVideo = document.querySelector('iframe');
+    const trailerBtn = document.querySelector('.close-trailer');
+   
+    this.setState({ showModal: true }, () => {
+      trailerModal.style.top = `${trailerPosition}px`;
+      trailerContainer.classList.add('visible');
+      trailerVideo.classList.add('spread-video-player');
+      trailerBtn.classList.add('animate-btn');
+    });
+  }
+
+  closeTrailerModal(e) {
+    this.setState({ showModal: false });
+    const target = e.target;
+    const trailerContainer = document.querySelector('.trailer-container');
+    const trailerVideo = document.querySelector('iframe');
+    const trailerBtn = document.querySelector('.close-trailer');
+  
+    if(target.classList.contains('close-trailer') || target.classList.contains('shading-bg')) {
+      trailerContainer.classList.remove('visible');
+      trailerVideo.classList.remove('spread-video-player');
+      trailerBtn.classList.remove('animate-btn');
+    }
   }
 
   initialize(id) {
@@ -29,13 +65,12 @@ class FullMovieDetails extends Component {
       getMovieSuggestions({ movie_id: id })
     ]).then(() => {
       this.setState({ loading: false })
-    })
+    });
   }
 
   componentWillMount() {
     const { id } = this.props.match.params;
     this.initialize(id);
-  
   }  
 
   componentWillReceiveProps(newProps) {
@@ -51,7 +86,10 @@ class FullMovieDetails extends Component {
     const { movieDetails, movieSuggestions } = this.props.movie;
     return (
       <div className="bg-full-movie-details">
-        <MovieTrailerModal trailer={ movieDetails.yt_trailer_code } />
+        <MovieTrailerModal
+          closeTrailerModal={this.closeTrailerModal}
+          trailer={ movieDetails.yt_trailer_code }
+        />
         <Loading state={state}/>
         <div className="content-wrapper">
           <div className="row">
@@ -64,7 +102,10 @@ class FullMovieDetails extends Component {
             </div>
           </div>
           <div className="row">
-            <Screenshots info={movieDetails} />
+            <Screenshots 
+              showTrailerModal={this.showTrailerModal}
+              info={movieDetails} 
+            />
             <MovieSubinfo info={movieDetails} />
           </div>
         </div>
