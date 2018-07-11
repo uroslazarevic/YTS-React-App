@@ -7,6 +7,13 @@
   z-index: 1;
   position: fixed;
   
+  i.fa-search {
+    color: #919191;
+    font-size: 12px;
+    position: absolute;
+    top: 49px;
+    left: 26px;
+  }
   
   .logo {
     padding-top: 5px;
@@ -33,7 +40,19 @@
 
         input {
           width: 250px;
+          height: 35px;
+          font-size: 0.85em;
+          font-weight: bold;
+          color: #919191;
+          background: #1d1d1d;
+          padding: 4px 30px;
+          border: 2px solid #333;
           margin-right: 10px;
+          border-radius: 20px;
+
+          &:focus {
+            outline: none;
+          }
         }
       }
 

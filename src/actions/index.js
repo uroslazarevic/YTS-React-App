@@ -23,7 +23,7 @@ export function searchMovies({ query_term = '', limit= 4 } = {}) {
   };
   const stringified = qs.stringify(data);
 
-  const request= axios.get(`${ROOT_URL}list_movies.json?${stringified}`);
+  const request= axios.get(`${ROOT_URL}list_movies.json?${stringified}`)
   return {
     type: SEARCH_MOVIES,
     payload: request

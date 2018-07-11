@@ -5,7 +5,7 @@ import {
   getFullMovieDetails, 
   getMovieSuggestions
 } from 'actions';
-import Loading from 'components/loader';
+import { PageLoader } from 'components/loader';
 
 import MainMovieDetails from 'components/main_movie_info';
 import SimilarMovies from 'components/similar_movies';
@@ -20,7 +20,7 @@ class FullMovieDetails extends Component {
 
     this.state = {
       loading: true, 
-      showModal: true
+      showModal: false
     };
 
     this.showTrailerModal = this.showTrailerModal.bind(this);
@@ -28,33 +28,11 @@ class FullMovieDetails extends Component {
   }
 
   showTrailerModal() {
-    let trailerPosition = window.screen.availHeight/2;
-    trailerPosition += window.pageYOffset - 430;
-    const trailerContainer = document.querySelector('.trailer-container');
-    const trailerModal = document.querySelector('.trailer');
-    const trailerVideo = document.querySelector('iframe');
-    const trailerBtn = document.querySelector('.close-trailer');
-   
-    this.setState({ showModal: true }, () => {
-      trailerModal.style.top = `${trailerPosition}px`;
-      trailerContainer.classList.add('visible');
-      trailerVideo.classList.add('spread-video-player');
-      trailerBtn.classList.add('animate-btn');
-    });
+    this.setState({ showModal: true });
   }
 
   closeTrailerModal(e) {
     this.setState({ showModal: false });
-    const target = e.target;
-    const trailerContainer = document.querySelector('.trailer-container');
-    const trailerVideo = document.querySelector('iframe');
-    const trailerBtn = document.querySelector('.close-trailer');
-  
-    if(target.classList.contains('close-trailer') || target.classList.contains('shading-bg')) {
-      trailerContainer.classList.remove('visible');
-      trailerVideo.classList.remove('spread-video-player');
-      trailerBtn.classList.remove('animate-btn');
-    }
   }
 
   initialize(id) {
@@ -86,11 +64,12 @@ class FullMovieDetails extends Component {
     const { movieDetails, movieSuggestions } = this.props.movie;
     return (
       <div className="bg-full-movie-details">
-        <MovieTrailerModal
+      {this.state.showModal ? <MovieTrailerModal
           closeTrailerModal={this.closeTrailerModal}
           trailer={ movieDetails.yt_trailer_code }
-        />
-        <Loading state={state}/>
+        /> : null }
+        
+        <PageLoader state={state}/>
         <div className="content-wrapper">
           <div className="row">
             <div className="navbar-position-div"></div>

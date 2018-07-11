@@ -5,6 +5,12 @@
   background: #1d1d1d;
   z-index: 1;
   position: fixed; }
+  #navbar i.fa-search {
+    color: #919191;
+    font-size: 12px;
+    position: absolute;
+    top: 49px;
+    left: 26px; }
   #navbar .logo {
     padding-top: 5px; }
     #navbar .logo img {
@@ -19,7 +25,17 @@
       display: inline-block; }
       #navbar .col-md-6:last-child .navbar-right div:first-child input {
         width: 250px;
-        margin-right: 10px; }
+        height: 35px;
+        font-size: 0.85em;
+        font-weight: bold;
+        color: #919191;
+        background: #1d1d1d;
+        padding: 4px 30px;
+        border: 2px solid #333;
+        margin-right: 10px;
+        border-radius: 20px; }
+        #navbar .col-md-6:last-child .navbar-right div:first-child input:focus {
+          outline: none; }
     #navbar .col-md-6:last-child .navbar-right .nav-links {
       display: inline-block; }
       #navbar .col-md-6:last-child .navbar-right .nav-links a {

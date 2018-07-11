@@ -3,7 +3,6 @@ import imdbLogo from '../images/IMDB_Logo_2016.png';
 import camCorder from '../images/camCorder.png';
 
 export default function({ info }) {
-  console.log()
   const { genres, torrents, imdb_code } = info;
   return (
     <div className="main-movie-info">

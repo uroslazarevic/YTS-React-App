@@ -1,14 +1,15 @@
 import React from 'react';
-import loader from 'images/lg.vortex-spiral-spinner.gif';
+import pageLoader from 'images/load.gif';
+import searchLoader from 'images/Spinner.gif';
 
-export default function (props) {
-  const state = props.state;
-  
+export function PageLoader ( {state} ) {
   return state ?(
-      <div className="loader-bg" >
-        <img className="loader" src={loader} alt="" />
-        <div className="circle-of-light"></div>
-      </div>
+    <div className="loader-bg" >
+      <img className="loader" src={pageLoader} alt="" />
+    </div>
   ) : <div></div>
-  
+}
+
+export function SearchLoader({ loading }) {
+  return loading? <img className="search-loader" src={searchLoader} alt="" /> : <div></div>
 }

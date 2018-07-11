@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 import { connect } from 'react-redux';
 import { searchMovies } from '../actions';
+import { SearchLoader } from 'components/loader';
 import SearchedMovies from '../components/searched_movies';
 
 class SearchBar extends Component {
@@ -8,17 +10,21 @@ class SearchBar extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { inputTerm:'' }
+    this.state = { 
+      inputTerm:'',
+      searchLoader: false,
+      pageLoader: false
+     }
     this.inputSearchTerm = this.inputSearchTerm.bind(this);
   };
  
-  inputSearchTerm(e) {
-    this.setState({inputTerm: e.target.value}, () => {
+  inputSearchTerm(event) {
+    this.setState({ searchLoader: true, inputTerm: event.target.value }, () => {
+      const inputTerm = this.state.inputTerm;
+      console.log(inputTerm.length)
       // Condition for not rendering movies if the search string is ''
-      this.state.inputTerm ? 
-      this.props.searchMovies({query_term: this.state.inputTerm}
-      ) : null
-       
+      inputTerm.length >= 1 ? this.props.searchMovies( { query_term: this.state.inputTerm} )
+      .then(() => this.setState({searchLoader: false})) : this.setState({ searchLoader: false })
     });
   }
 
@@ -35,8 +41,12 @@ class SearchBar extends Component {
   };
   
   render() {
+    const searchLoader = this.state.searchLoader;
+    
     return (
       <div>
+        <SearchLoader loading={searchLoader} />
+        <span><i className="fas fa-search"></i></span>
         <input 
           onChange={this.inputSearchTerm}
           value={this.state.inputTerm}
