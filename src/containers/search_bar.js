@@ -13,9 +13,12 @@ class SearchBar extends Component {
     this.state = { 
       inputTerm:'',
       searchLoader: false,
-      pageLoader: false
+      pageLoader: false,
+      showMovieList: false
      }
     this.inputSearchTerm = this.inputSearchTerm.bind(this);
+    this.hideMovieList = this.hideMovieList.bind(this);
+    this.showMovieList = this.showMovieList.bind(this);
   };
  
   inputSearchTerm(event) {
@@ -24,8 +27,16 @@ class SearchBar extends Component {
       console.log(inputTerm.length)
       // Condition for not rendering movies if the search string is ''
       inputTerm.length >= 1 ? this.props.searchMovies( { query_term: this.state.inputTerm} )
-      .then(() => this.setState({searchLoader: false})) : this.setState({ searchLoader: false })
+      .then(() => this.setState({ searchLoader: false, showMovieList: true })) : this.setState({ searchLoader: false })
     });
+  }
+
+  hideMovieList() {
+    this.setState({ showMovieList: false })
+  };
+
+  showMovieList() {
+    this.state.inputTerm ? this.setState({ showMovieList: true }) : null
   }
 
   renderMovies() {
@@ -48,13 +59,17 @@ class SearchBar extends Component {
         <SearchLoader loading={searchLoader} />
         <span><i className="fas fa-search"></i></span>
         <input 
+          onFocus={this.showMovieList}
+          onBlur={this.hideMovieList} 
           onChange={this.inputSearchTerm}
           value={this.state.inputTerm}
           placeholder="Quick search"
         />
+        {this.state.showMovieList ? 
         <ul className="rendered-movie-list">
          {this.renderMovies()}
-        </ul>
+        </ul> : null }
+        
       </div>
     )
   }
