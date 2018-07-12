@@ -15,28 +15,43 @@ class SearchBar extends Component {
       searchLoader: false,
       pageLoader: false,
       showMovieList: false
-     }
-    this.inputSearchTerm = this.inputSearchTerm.bind(this);
-    this.hideMovieList = this.hideMovieList.bind(this);
+    }
+    this.searchBar = React.createRef();
+    this.handleSearchTermChange = this.handleSearchTermChange.bind(this);
+    this.inputSearchTerm = _.debounce( this.inputSearchTerm.bind(this), 250 );
     this.showMovieList = this.showMovieList.bind(this);
+    this.handleSearchTermFocus= this.handleSearchTermFocus.bind(this);
   };
+
+  handleSearchTermChange(event) {
+    event.persist();
+    const value = event.target.value;
+    this.setState({ searchLoader: true, inputTerm: value })
+    this.inputSearchTerm(value)
+  }
  
-  inputSearchTerm(event) {
-    this.setState({ searchLoader: true, inputTerm: event.target.value }, () => {
-      const inputTerm = this.state.inputTerm;
-      console.log(inputTerm.length)
-      // Condition for not rendering movies if the search string is ''
-      inputTerm.length >= 1 ? this.props.searchMovies( { query_term: this.state.inputTerm} )
-      .then(() => this.setState({ searchLoader: false, showMovieList: true })) : this.setState({ searchLoader: false })
-    });
+  inputSearchTerm(value) {
+    // Condition for not rendering movies if the search string is ''
+    value.length >= 1 ? this.props.searchMovies( { query_term: value} )
+    .then(() => this.setState({ searchLoader: false, showMovieList: true })) : this.setState({ searchLoader: false, showMovieList: false })
   }
 
-  hideMovieList() {
-    this.setState({ showMovieList: false })
-  };
+  showMovieList(event) {
+    this.searchBar.current.contains(event.target) ?  this.setState({ showMovieList: true })
+     : this.setState({ showMovieList: false })
+  }
 
-  showMovieList() {
-    this.state.inputTerm ? this.setState({ showMovieList: true }) : null
+  handleSearchTermFocus(event) {
+    event.stopPropagation();
+    this.setState({ showMovieList: true })
+  }
+
+  componentDidMount() {
+    document.addEventListener('click', this.showMovieList);
+  }
+
+  handleSearchMovieClick() {
+    this.setState({ inputTerm: '', showMovieList: 'false' });
   }
 
   renderMovies() {
@@ -47,31 +62,32 @@ class SearchBar extends Component {
     }
     
     return searchedMovies.map(movie => {
-      return  <SearchedMovies key={movie.id} movie={movie} />
+      return  (
+      <SearchedMovies 
+        key={movie.id}
+        movie={movie} 
+      />
+    )
     });
   };
   
   render() {
     const searchLoader = this.state.searchLoader;
-    
     return (
-      <div>
+      <div ref={this.searchBar}>
         <SearchLoader loading={searchLoader} />
         <span><i className="fas fa-search"></i></span>
         <input 
-          onFocus={this.showMovieList}
-          onBlur={this.hideMovieList} 
-          onChange={this.inputSearchTerm}
+          onChange={this.handleSearchTermChange}
           value={this.state.inputTerm}
           placeholder="Quick search"
         />
-        {this.state.showMovieList ? 
+        {this.state.showMovieList && this.state.inputTerm ? 
         <ul className="rendered-movie-list">
          {this.renderMovies()}
         </ul> : null }
-        
       </div>
-    )
+    );
   }
 }
 
