@@ -50,9 +50,10 @@ class SearchBar extends Component {
     document.addEventListener('click', this.showMovieList);
   }
 
-  handleSearchMovieClick() {
-    this.setState({ inputTerm: '', showMovieList: 'false' });
-  }
+  // Need to use this func to reset inputTerm!
+  // handleSearchMovieClick() {
+  //   this.setState({ inputTerm: '', showMovieList: 'false' });
+  // }
 
   renderMovies() {
     const { searchedMovies } = this.props;

@@ -5,8 +5,7 @@
   z-index: 5;
   height: 100%;
   background: rgba(0, 0, 0, 0.9);
-  cursor: pointer;
-  transition: opacity 0.2s ease-in; }
+  cursor: pointer; }
 
 .trailer {
   cursor: pointer;

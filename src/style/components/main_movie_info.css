@@ -1,4 +1,4 @@
-/* Main Movie Info Component */
+/* Main Movie Info Component && Torrents Modal Component*/
 .main-movie-info {
   overflow: hidden; }
   .main-movie-info .movie-poster {
@@ -13,27 +13,6 @@
       background-size: cover;
       border-radius: 4px;
       border: 5px solid #fff; }
-    .main-movie-info .movie-poster .show-torrents-btn {
-      background: #6ac045;
-      transition: all 300ms ease;
-      border-radius: 3px;
-      width: 260px;
-      margin: 0 auto;
-      margin-top: 10px; }
-      .main-movie-info .movie-poster .show-torrents-btn:hover {
-        background: #5da93c; }
-      .main-movie-info .movie-poster .show-torrents-btn a {
-        display: block;
-        line-height: 39px;
-        color: #fff;
-        font-size: 1.1em;
-        font-weight: bold;
-        height: 39px; }
-        .main-movie-info .movie-poster .show-torrents-btn a span {
-          margin-right: 10px;
-          color: #428e21; }
-          .main-movie-info .movie-poster .show-torrents-btn a span .fa-download {
-            transform: scale(0.9727, 1); }
   .main-movie-info .movie-info {
     color: #fff;
     display: inline-block;
@@ -86,3 +65,122 @@
           color: #6ac045;
           transform: scale(0.9505, 1.125);
           padding-left: 6px; }
+
+.show-torrents-btn {
+  background: #6ac045;
+  transition: all 300ms ease;
+  border-radius: 3px;
+  width: 260px;
+  margin: 0 auto;
+  margin-top: 10px; }
+  .show-torrents-btn:hover {
+    background: #5da93c; }
+  .show-torrents-btn a {
+    display: block;
+    line-height: 39px;
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: bold;
+    height: 39px; }
+    .show-torrents-btn a span {
+      margin-right: 10px;
+      color: #428e21; }
+      .show-torrents-btn a span .fa-download {
+        transform: scale(0.9727, 1); }
+
+.torrents-modal-bg {
+  width: 100%;
+  position: fixed;
+  z-index: 5;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  cursor: pointer; }
+  .torrents-modal-bg .torrents-modal {
+    position: absolute;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: .3rem;
+    outline: 0;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: default !important; }
+    .torrents-modal-bg .torrents-modal .close-torrents-modal {
+      color: #919191;
+      cursor: pointer !important;
+      position: absolute;
+      top: 0px;
+      right: 8px;
+      width: 30px;
+      font-size: 26px;
+      height: 30px;
+      font-weight: bold; }
+      .torrents-modal-bg .torrents-modal .close-torrents-modal:hover {
+        color: #000;
+        transition: 0.2s all ease-in; }
+    .torrents-modal-bg .torrents-modal .torrents-modal-title {
+      padding-top: 2.2em;
+      color: #6ac045;
+      font-size: 18px;
+      font-weight: bold; }
+    .torrents-modal-bg .torrents-modal .torrents-modal-content {
+      width: 600px;
+      padding: 2em; }
+      .torrents-modal-bg .torrents-modal .torrents-modal-content .torrent-quality {
+        display: inline-block;
+        width: 30%;
+        border-right: 1px solid #ccc;
+        margin-bottom: 30px;
+        padding-bottom: 10px; }
+        .torrents-modal-bg .torrents-modal .torrents-modal-content .torrent-quality:nth-child(even) {
+          border-right: 1px solid #ccc;
+          border-left: none; }
+        .torrents-modal-bg .torrents-modal .torrents-modal-content .torrent-quality:nth-child(odd) {
+          border-right: none; }
+        .torrents-modal-bg .torrents-modal .torrents-modal-content .torrent-quality:first-child {
+          border-right: 1px solid #ccc; }
+        .torrents-modal-bg .torrents-modal .torrents-modal-content .torrent-quality:last-child {
+          border: none; }
+        .torrents-modal-bg .torrents-modal .torrents-modal-content .torrent-quality .show-torrents-btn {
+          width: 140px;
+          height: 36px;
+          cursor: pointer !important; }
+          .torrents-modal-bg .torrents-modal .torrents-modal-content .torrent-quality .show-torrents-btn a {
+            display: block;
+            line-height: 36px;
+            color: #fff;
+            font-size: 16px;
+            height: 36px; }
+            .torrents-modal-bg .torrents-modal .torrents-modal-content .torrent-quality .show-torrents-btn a span {
+              margin-right: 10px;
+              color: #428e21; }
+              .torrents-modal-bg .torrents-modal .torrents-modal-content .torrent-quality .show-torrents-btn a span .fa-download {
+                transform: scale(0.8, 0.86); }
+        .torrents-modal-bg .torrents-modal .torrents-modal-content .torrent-quality .quality-img {
+          position: relative;
+          margin: 0 auto; }
+          .torrents-modal-bg .torrents-modal .torrents-modal-content .torrent-quality .quality-img img {
+            width: 131px;
+            height: 81px;
+            margin: 0 auto;
+            margin-bottom: 25px; }
+          .torrents-modal-bg .torrents-modal .torrents-modal-content .torrent-quality .quality-img .quality-text {
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            color: #cdcdcd;
+            font-size: 20px;
+            font-weight: bold; }
+        .torrents-modal-bg .torrents-modal .torrents-modal-content .torrent-quality .file-text {
+          color: #cdcdcd;
+          margin-top: 15px;
+          font-size: 16px; }
+        .torrents-modal-bg .torrents-modal .torrents-modal-content .torrent-quality .file-size {
+          font-size: 16px;
+          color: #333;
+          font-weight: bold;
+          margin-top: 15px; }

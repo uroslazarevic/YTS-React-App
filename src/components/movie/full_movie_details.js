@@ -12,6 +12,8 @@ import SimilarMovies from 'components/similar_movies';
 import Screenshots from 'components/screenshots';
 import MovieSubinfo from 'components/movie_subinfo';
 import MovieTrailerModal from 'components/movie_trailer_modal';
+import TorrentsModal from 'components/torrents_modal';
+
 
 
 class FullMovieDetails extends Component {
@@ -20,19 +22,31 @@ class FullMovieDetails extends Component {
 
     this.state = {
       loading: true, 
-      showModal: false
+      showTrailerModal: false,
+      showTorrentsModal: false
     };
 
+    this.torrentsModal = React.createRef();
     this.showTrailerModal = this.showTrailerModal.bind(this);
     this.closeTrailerModal = this.closeTrailerModal.bind(this);
+    this.handleTorrentsModal = this.handleTorrentsModal.bind(this);
+    this.hideTorrentsModal = this.hideTorrentsModal.bind(this);
   }
 
   showTrailerModal() {
-    this.setState({ showModal: true });
+    this.setState({ showTrailerModal: true });
   }
 
-  closeTrailerModal(e) {
-    this.setState({ showModal: false });
+  closeTrailerModal() {
+    this.setState({ showTrailerModal: false });
+  }
+
+  handleTorrentsModal() {
+    this.setState({ showTorrentsModal: true });
+  }
+
+  hideTorrentsModal() {
+    this.setState({ showTorrentsModal: false });
   }
 
   initialize(id) {
@@ -62,19 +76,25 @@ class FullMovieDetails extends Component {
   render() {
     const state = this.state.loading;
     const { movieDetails, movieSuggestions } = this.props.movie;
+
     return (
       <div className="bg-full-movie-details">
-      {this.state.showModal ? <MovieTrailerModal
+        {this.state.showTrailerModal ? <MovieTrailerModal 
           closeTrailerModal={this.closeTrailerModal}
-          trailer={ movieDetails.yt_trailer_code }
-        /> : null }
+          trailer={ movieDetails.yt_trailer_code }/> : null }
+
+         { this.state.showTorrentsModal ? <TorrentsModal 
+            hideTorrentsModal={this.hideTorrentsModal}
+         torrents={movieDetails.torrents}/> : null }
         
         <PageLoader state={state}/>
         <div className="content-wrapper">
           <div className="row">
             <div className="navbar-position-div"></div>
             <div className="col-md-8">
-              <MainMovieDetails info={movieDetails} />
+              <MainMovieDetails 
+                info={movieDetails} 
+                handleTorrentsModal = { this.handleTorrentsModal } />
             </div>
             <div className="col-md-4">
               <SimilarMovies similar={movieSuggestions} />

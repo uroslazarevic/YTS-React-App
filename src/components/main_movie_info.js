@@ -2,15 +2,18 @@ import React from 'react';
 import imdbLogo from '../images/IMDB_Logo_2016.png';
 import camCorder from '../images/camCorder.png';
 
-export default function({ info }) {
+export default function({ info, handleTorrentsModal }) {
   const { genres, torrents, imdb_code } = info;
+  
   return (
     <div className="main-movie-info">
       <div className="movie-poster">
         <div>
           <img src={info.medium_cover_image} alt="" />
         </div>
-        <div className="show-torrents-btn">
+        <div 
+          onClick={() => handleTorrentsModal()}
+          className="show-torrents-btn">
           <a href="javascript:void(0)">
             <span><i className="fas fa-download"></i></span> Download
           </a>
