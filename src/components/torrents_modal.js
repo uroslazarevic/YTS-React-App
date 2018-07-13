@@ -1,5 +1,5 @@
 import React from 'react';
-import screenImg from '../images/monitor.png';
+import screenImg from 'images/monitor.png';
 
 export default function ({torrents, hideTorrentsModal}) {
   return(

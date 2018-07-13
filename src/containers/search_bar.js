@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 import { connect } from 'react-redux';
-import { searchMovies } from '../actions';
-import { SearchLoader } from 'components/loader';
-import SearchedMovies from '../components/searched_movies';
+import { searchMovies } from 'actions';
+import { SearchedMovies, SearchLoader } from 'components';
 
 class SearchBar extends Component {
 
@@ -13,7 +12,6 @@ class SearchBar extends Component {
     this.state = { 
       inputTerm:'',
       searchLoader: false,
-      pageLoader: false,
       showMovieList: false
     }
     this.searchBar = React.createRef();
@@ -50,6 +48,10 @@ class SearchBar extends Component {
     document.addEventListener('click', this.showMovieList);
   }
 
+  componentWillUnmount() {
+    document.removeEventListener('click');
+  }
+
   // Need to use this func to reset inputTerm!
   // handleSearchMovieClick() {
   //   this.setState({ inputTerm: '', showMovieList: 'false' });
@@ -73,10 +75,9 @@ class SearchBar extends Component {
   };
   
   render() {
-    const searchLoader = this.state.searchLoader;
     return (
       <div ref={this.searchBar}>
-        <SearchLoader loading={searchLoader} />
+        { this.state.searchLoader ? <SearchLoader /> : null }
         <span><i className="fas fa-search"></i></span>
         <input 
           onChange={this.handleSearchTermChange}

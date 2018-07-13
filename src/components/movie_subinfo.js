@@ -1,5 +1,5 @@
 import React from 'react';
-import noImg from '../images/image.png';
+import noImg from 'images/image.png';
 import { Link } from 'react-router-dom';
 
 export default function({ info }) {

@@ -5,14 +5,16 @@ import {
   getFullMovieDetails, 
   getMovieSuggestions
 } from 'actions';
-import { PageLoader } from 'components/loader';
 
-import MainMovieDetails from 'components/main_movie_info';
-import SimilarMovies from 'components/similar_movies';
-import Screenshots from 'components/screenshots';
-import MovieSubinfo from 'components/movie_subinfo';
-import MovieTrailerModal from 'components/movie_trailer_modal';
-import TorrentsModal from 'components/torrents_modal';
+import { 
+  MainMovieDetails,
+  SimilarMovies,
+  Screenshots,
+  MovieSubinfo,
+  MovieTrailerModal, 
+  TorrentsModal,
+  PageLoader
+} from 'components';
 
 
 
@@ -74,7 +76,6 @@ class FullMovieDetails extends Component {
   }
 
   render() {
-    const state = this.state.loading;
     const { movieDetails, movieSuggestions } = this.props.movie;
 
     return (
@@ -85,9 +86,9 @@ class FullMovieDetails extends Component {
 
          { this.state.showTorrentsModal ? <TorrentsModal 
             hideTorrentsModal={this.hideTorrentsModal}
-         torrents={movieDetails.torrents}/> : null }
+            torrents={movieDetails.torrents}/> : null }
         
-        <PageLoader state={state}/>
+        { this.state.loading ? <PageLoader/> : null}
         <div className="content-wrapper">
           <div className="row">
             <div className="navbar-position-div"></div>

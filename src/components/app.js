@@ -1,8 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-
-import NavBar from '../components/navbar';
-import Footer from './footer';
+import { NavBar, Footer } from 'components';
 
 export default function({component: Component, ...rest}) {
    return (

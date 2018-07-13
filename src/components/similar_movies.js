@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { getFullMovieDetails, getMovieSuggestions } from 'actions';
-
 import { Link } from 'react-router-dom';
 
-class SimilarMovies extends Component {
-
+export default class SimilarMovies extends Component {
 
   renderSimilarMovie(similar) {
     return similar.map(movie => {
@@ -31,15 +27,3 @@ class SimilarMovies extends Component {
     );
   }
 }
-
-function mapStateToProps({ movie }) {
-  return {
-    movie
-  };
-}
-
-export default connect(mapStateToProps, { 
-  getFullMovieDetails,
-  getMovieSuggestions
- } )(SimilarMovies)
-

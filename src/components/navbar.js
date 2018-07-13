@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import logo from '../images/yts-logo.png';
-import SearchBar from '../containers/search_bar';
+import logo from 'images/yts-logo.png';
+import SearchBar from 'containers/search_bar';
 
 
 export default function() {
