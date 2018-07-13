@@ -61,13 +61,13 @@ class FullMovieDetails extends Component {
   }
 
   componentWillMount() {
-    const { id } = this.props.match.params;
+    const { id } = this.props.location.state;
     this.initialize(id);
   }  
 
   componentWillReceiveProps(newProps) {
-    const  oldId  = this.props.match.params.id;
-    const  newId  = newProps.match.params.id
+    const  oldId  = this.props.location.state.id;
+    const  newId  = newProps.location.state.id;
     if(newId !== oldId) {
       this.initialize(newId);
     }
@@ -114,9 +114,7 @@ class FullMovieDetails extends Component {
 }
 
 function mapStateToProps({ movie }) {
-  return {
-    movie
-  };
+  return { movie };
 }
 
 export default connect(mapStateToProps, { 

@@ -9,9 +9,11 @@ class SimilarMovies extends Component {
 
   renderSimilarMovie(similar) {
     return similar.map(movie => {
+      const title = movie.url.split('https://yts.am/movie/').slice(1, 2);
+
       return (
-        <div key={movie.title} className="similar-movie-card">
-          <Link to={`/movie/${movie.id}`}>
+        <div key={title} className="similar-movie-card">
+          <Link to={{ pathname:`/movie/${title}`, state: { id: movie.id } }}>
             <img src={movie.medium_cover_image} alt="" />
           </Link>
         </div>

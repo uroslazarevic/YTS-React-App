@@ -3,12 +3,12 @@ import noImage from '../images/no_image_available.jpeg';
 import { Link } from 'react-router-dom';
 
 export default function (props) {
-
   const { movie, genres, quality } = props;
-  // to={`/movie/${movie.id}`}
+  const title = movie.url.split('https://yts.am/movie/').slice(1, 2);
+
   return (
     <div className="col-md-3 col-lg-3">
-      <Link to={`/movie/${movie.id}`} >
+      <Link to={{ pathname:`/movie/${title}`, state: { id: movie.id } }} >
         <div className="detail-movie">
           {renderMovieQuality(quality)}
           <div className="detail-img">
