@@ -16,8 +16,6 @@ import {
   PageLoader
 } from 'components';
 
-
-
 class FullMovieDetails extends Component {
   constructor(props) {
     super(props);

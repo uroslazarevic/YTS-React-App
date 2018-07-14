@@ -1,0 +1,59 @@
+.forms-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(24, 24, 24, 0.8);
+  z-index: 999;
+  overflow-y: auto;
+  cursor: pointer; }
+  .forms-bg .forms {
+    background: #fff;
+    width: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+    .forms-bg .forms .switch-forms {
+      width: 600px;
+      height: 70px;
+      border-radius: .25em .25em 0 0;
+      text-align: center; }
+      .forms-bg .forms .switch-forms .login-form-title, .forms-bg .forms .switch-forms .register-form-title {
+        display: inline-block;
+        width: 50%;
+        background: #fff;
+        color: #6ac045;
+        font-weight: bold;
+        border-radius: .25em .25em 0 0;
+        cursor: pointer;
+        line-height: 70px;
+        font-size: 1.2em; }
+    .forms-bg .forms form.login-form, .forms-bg .forms form.register-form {
+      padding: 2em; }
+      .forms-bg .forms form.login-form .field, .forms-bg .forms form.register-form .field {
+        margin-bottom: 2em; }
+        .forms-bg .forms form.login-form .field .text-help, .forms-bg .forms form.register-form .field .text-help {
+          font-size: 16px; }
+        .forms-bg .forms form.login-form .field input, .forms-bg .forms form.register-form .field input {
+          color: #333;
+          font-size: 14px;
+          border-radius: .25em;
+          padding: 16px 20px 16px 50px;
+          border: 1px solid #d2d8d8;
+          width: 100%;
+          height: 50px;
+          cursor: text; }
+      .forms-bg .forms form.login-form button, .forms-bg .forms form.register-form button {
+        background: #6ac045;
+        border-radius: 3px;
+        font-weight: bold;
+        color: #fff;
+        font-size: 16px;
+        width: 100%;
+        padding: 7px 0;
+        margin: 0 auto; }
+        .forms-bg .forms form.login-form button:hover, .forms-bg .forms form.register-form button:hover {
+          transition: all 300ms ease;
+          background: #5da93c; }
