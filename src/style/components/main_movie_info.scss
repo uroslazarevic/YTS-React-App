@@ -1,0 +1,270 @@
+/* Main Movie Info Component && Torrents Modal Component*/
+
+// Main Movie Info Component
+.main-movie-info {
+  overflow: hidden;
+
+  .movie-poster {
+    text-align: center;
+    display: inline-block;
+    width: 50%;
+    float: left;
+    padding-right: 15px;
+
+    img {
+      height: 390px;
+      width: 260px;
+      background-size: cover;
+      border-radius: 4px;
+      border: 5px solid #fff;
+    }
+  }
+
+  .movie-info {
+    color: #fff;
+    display: inline-block;
+    width: 50%;
+    padding-left: 15px;
+    float: left;
+
+    .title {
+      font-size: 2.5em;
+      margin-bottom: 24px;
+      line-height: 42px;
+      font-weight: bold;
+    }
+
+    .year, .genres {
+      line-height: 24px;
+      font-size: 1.25em;
+      font-weight: bold;
+    }
+    
+    .torrents {
+      margin-top: 30px;
+      margin-bottom: 20px;
+
+      em {
+        font-size: 1.1em;
+        padding-bottom: 10px;
+        display: inline-block;
+      }
+
+      .torrent-block {
+        padding: 5px 12px;
+        background: rgba(27,27,35,.4);
+        border: 1px solid rgba(255,255,255,.16);
+        border-radius: 4px;
+        font-size: .8em;
+        display: inline-block;
+        text-align: center;
+        color: #fff;
+        width: 90px;
+        margin-left: 6px; 
+
+        &:hover {
+          color: #d5d5d5;
+        }
+      }
+    }
+
+    .ratings {
+      
+      .rating-row{
+        size: 1.1px;
+        font-weight: bold;
+        color: #fff;
+        padding-bottom: 10px; 
+
+        span {
+          display: inline-block; 
+          margin-right: 35px;
+          width: 40px;
+          
+          .fa-heart {
+            color: #6ac045;
+            transform: scale(1.069,1.125);
+            padding-left: 2px;
+          }
+  
+          .fa-star {
+            color: #6ac045;
+            transform: scale(0.9505, 1.125);
+            padding-left: 6px;
+          }
+         }
+      }
+    }
+  }
+}
+
+.show-torrents-btn {
+  background: #6ac045;
+  transition: all 300ms ease;
+  border-radius: 3px;
+  width: 260px;
+  margin: 0 auto;
+  margin-top: 10px;
+
+  &:hover {
+    background: #5da93c;
+  }
+
+  a {
+    display: block;
+    line-height: 39px;
+    color: #fff;
+    font: {
+      size: 1.1em;
+      weight: bold;
+    }
+    height: 39px;
+
+    span {
+      margin-right: 10px;
+      color: #428e21;
+
+      .fa-download {
+        transform:scale(0.9727 ,1);
+      }
+    }
+  }
+}
+
+// Torrents Modal Component
+
+.torrents-modal-bg {
+  width: 100%;
+  position: fixed;
+  z-index: 5;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  
+  .torrents-modal {
+    position: absolute;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: .3rem;
+    outline: 0;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50% );
+    cursor: default !important;
+
+    .close-torrents-modal {
+      color:#919191;
+      cursor: pointer !important;
+      position: absolute;
+      top: 0px;
+      right: 8px;
+      width: 30px;
+      font-size: 26px;
+      height: 30px;
+      font-weight: bold;
+
+      &:hover {
+        color:#000;
+        transition: 0.2s all ease-in;
+      }
+    }
+
+    .torrents-modal-title {
+      padding-top: 2.2em;
+      color: #6ac045;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .torrents-modal-content {
+      width: 600px;
+      padding: 2em;
+
+      .torrent-quality {
+        display: inline-block;
+        width: 30%;
+        border-right: 1px solid #ccc;
+        margin-bottom: 30px;
+        padding-bottom: 10px;
+
+        &:nth-child(even) {
+          border-right: 1px solid #ccc;
+          border-left: none;
+        }
+
+        &:nth-child(odd) {
+          border-right: none
+        }
+
+        &:first-child {
+          border-right: 1px solid #ccc;
+        }
+
+        &:last-child {
+          border: none;
+        }
+
+        .show-torrents-btn {
+          width: 140px;
+          height: 36px;
+          cursor: pointer !important;
+        
+          a {
+            display: block;
+            line-height: 36px;
+            color: #fff;
+            font-size: 16px;
+            height: 36px;
+      
+            span {
+              margin-right: 10px;
+              color: #428e21;
+      
+              .fa-download {
+                transform:scale(0.8 ,0.86);
+              }
+            }
+          }
+        }
+
+        .quality-img {
+          position: relative;
+          margin: 0 auto;
+
+          img {
+            width: 131px;
+            height: 81px;
+            margin: 0 auto;
+            margin-bottom: 25px;
+          }
+
+          .quality-text {
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translate(-50%, -0);
+            color: #cdcdcd;
+            font-size: 20px;
+            font-weight: bold;
+          }
+        }
+
+        .file-text {
+          color: #cdcdcd;
+          margin-top: 15px;
+          font-size: 16px;
+        }
+
+        .file-size {
+          font-size: 16px;
+          color: #333;
+          font-weight: bold;
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+}

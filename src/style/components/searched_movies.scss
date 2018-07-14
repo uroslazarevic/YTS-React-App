@@ -1,53 +1,53 @@
 /* Searched Movies Component */
 
-ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-
-  &.rendered-movie-list {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  ul.rendered-movie-list {
     position: absolute;
+  
+    li{
+      width: 250px;
+      padding: 10px;
+      height: 85px;
+      background-color: rgb(61, 61, 61);
+      clear: both;
+      cursor: pointer;
+      overflow: hidden;
+      &:hover {
+        background: rgb(173, 172, 172);
+      }
+      .searched-movie-img {
+        float: left;
+  
+        img {
+          width: 43px;
+          height: 63px;
+          margin-right: 15px;
+        }
+      }
+  
+      .movie-info-short {
+        float: right;
+        width: 172px;
+  
+        .searched-movie-title {
+          line-height: 18px;
+          padding: 5px 0;
+          margin-left: 10px;
+          color: #fff;
+          font-size: 12px;
+          font-weight: bold;
+        }
+  
+        .searched-movie-year {
+          margin-left: 10px;
+          color: #919191;
+          font-size: 12px;
+        }
+      }
+    }
   }
-
-  li{
-    width: 250px;
-    padding: 10px;
-    height: 85px;
-    background-color: rgb(61, 61, 61);
-    clear: both;
-    cursor: pointer;
-    overflow: hidden;
-    &:hover {
-      background: rgb(173, 172, 172);
-    }
-    .searched-movie-img {
-      float: left;
-
-      img {
-        width: 43px;
-        height: 63px;
-        margin-right: 15px;
-      }
-    }
-
-    .movie-info-short {
-      float: right;
-      width: 172px;
-
-      .searched-movie-title {
-        line-height: 18px;
-        padding: 5px 0;
-        margin-left: 10px;
-        color: #fff;
-        font-size: 12px;
-        font-weight: bold;
-      }
-
-      .searched-movie-year {
-        margin-left: 10px;
-        color: #919191;
-        font-size: 12px;
-      }
-    }
-  }
-}

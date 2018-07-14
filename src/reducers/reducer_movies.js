@@ -1,4 +1,4 @@
-import { SEARCH_MOVIES, POPULAR_DOWNLOADS, LATEST_TORRENTS } from '../actions';
+import { SEARCH_MOVIES, POPULAR_DOWNLOADS, LATEST_TORRENTS, UPCOMING_MOVIES } from '../actions';
 
 const initialState = {
   searchedMovies: [],
@@ -14,7 +14,9 @@ export default function (state = initialState, action ) {
     case POPULAR_DOWNLOADS:
       return { ...state, popularDownloads: action.payload.data.data.movies }
     case LATEST_TORRENTS: 
-      return { ...state, latestMovies: action.payload.data.data.movies}
+      return { ...state, latestMovies: action.payload.data.data.movies }
+    case UPCOMING_MOVIES: 
+      return { ...state, upcomingMovies: action.payload }
 
     default:
       return state;

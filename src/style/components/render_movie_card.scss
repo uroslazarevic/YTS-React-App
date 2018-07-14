@@ -1,5 +1,9 @@
 /* Render Movie Card Component */
 
+  a {
+    text-decoration: none !important;
+  }
+
 .detail-movie {
   width: 200px;
   margin: 0 auto;
@@ -116,6 +120,34 @@
   .detail-movieYear {
     font-size: .85em;
     color: #919191;
+  }
+
+  .quality-banner {
+    width: 120px;
+    height: 100px;
+    position: absolute;
+    overflow: hidden;
+    top: 5px;
+    left: 5px;
+
+    .detail-quality {
+      position: absolute;
+      width: 175px;
+      background: black;
+      height: 45px;
+      line-height: 45px;
+      text-align: center;
+      color: #fff;
+      font-size: 25px;
+      font-weight: bold;
+      transform: rotate(-40deg);
+      top: 12px;
+      left: -45px;
+    }
+
+    .blue {
+      background: #428bca !important;
+    }
   }
 
 }
