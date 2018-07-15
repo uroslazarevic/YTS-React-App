@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 
 import logo from 'images/yts-logo.png';
 import SearchBar from 'containers/search_bar';
-import LoginForm from 'components/login_form';
-import RegisterForm from 'components/register_form';
+import { LoginForm, RegisterForm } from 'components';
 
 export default class NavBar extends Component {
   constructor(props) {
@@ -16,12 +15,12 @@ export default class NavBar extends Component {
       showForms: false
     };
 
+    this.loginForm = React.createRef();
+    this.registerForm = React.createRef();
     this.onFormSubmit = this.onFormSubmit.bind(this);
     this.handleFormsState = this.handleFormsState.bind(this);
     this.handleLoginForm = this.handleLoginForm.bind(this);
     this.handleRegisterForm = this.handleRegisterForm.bind(this);
-    this.loginForm = React.createRef();
-    this.registerForm = React.createRef();
   }
 
   handleLoginForm(event) {
@@ -62,11 +61,13 @@ export default class NavBar extends Component {
       showRegisterForm: false,
       showLoginForm: false
     })
+    console.log(this.loginForm.current)
+
   }
 
   onFormSubmit() {
     console.log('Succesfull Submit!');
-    this.setState({ showForms: false});
+    this.setState({ showForms: false });
   }
 
   render() {

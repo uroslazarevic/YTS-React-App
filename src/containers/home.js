@@ -16,6 +16,7 @@ class Home extends Component {
   }
 
   initialize() {
+    this.setState({ pageLoader: true });
     const {getPopularDownloads, getLatestTorrents} = this.props;
     axios.all([
       getPopularDownloads(),
@@ -26,7 +27,6 @@ class Home extends Component {
   }
 
   componentWillMount() {
-    this.setState({ pageLoader: true });
     this.initialize();
   }
 

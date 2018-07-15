@@ -662,9 +662,9 @@ a {
     background: #fff;
     width: 600px;
     position: absolute;
-    top: 50%;
+    top: 200px;
     left: 50%;
-    transform: translate(-50%, -50%); }
+    transform: translate(-50%, 0); }
     .forms-bg .forms .switch-forms {
       width: 600px;
       height: 70px;
@@ -683,7 +683,8 @@ a {
     .forms-bg .forms form.login-form, .forms-bg .forms form.register-form {
       padding: 2em; }
       .forms-bg .forms form.login-form .field, .forms-bg .forms form.register-form .field {
-        margin-bottom: 2em; }
+        margin-bottom: 2em;
+        position: relative; }
         .forms-bg .forms form.login-form .field .text-help, .forms-bg .forms form.register-form .field .text-help {
           font-size: 16px; }
         .forms-bg .forms form.login-form .field input, .forms-bg .forms form.register-form .field input {
@@ -695,6 +696,11 @@ a {
           width: 100%;
           height: 50px;
           cursor: text; }
+        .forms-bg .forms form.login-form .field .form-icon, .forms-bg .forms form.register-form .field .form-icon {
+          position: absolute;
+          left: 17px;
+          top: 14px;
+          color: #eaeaea; }
       .forms-bg .forms form.login-form button, .forms-bg .forms form.register-form button {
         background: #6ac045;
         border-radius: 3px;
