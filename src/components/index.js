@@ -12,6 +12,7 @@ import Screenshots from 'components/screenshots';
 import MovieSubinfo from 'components/movie_subinfo';
 import MovieTrailerModal from 'components/movie_trailer_modal';
 import TorrentsModal from 'components/torrents_modal';
+import ImageSwiper from '../components/image_swiper';
 
 // Browse Movies Page
 
@@ -46,5 +47,6 @@ export {
   validate,
   renderField,
   LoginForm,
-  RegisterForm
+  RegisterForm,
+  ImageSwiper
 }

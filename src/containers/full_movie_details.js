@@ -13,7 +13,8 @@ import {
   MovieSubinfo,
   MovieTrailerModal, 
   TorrentsModal,
-  PageLoader
+  PageLoader,
+  ImageSwiper
 } from 'components';
 
 class FullMovieDetails extends Component {
@@ -23,7 +24,8 @@ class FullMovieDetails extends Component {
     this.state = {
       loading: true, 
       showTrailerModal: false,
-      showTorrentsModal: false
+      showTorrentsModal: false,
+      showImageCarousel: false
     };
 
     this.torrentsModal = React.createRef();
@@ -31,6 +33,16 @@ class FullMovieDetails extends Component {
     this.closeTrailerModal = this.closeTrailerModal.bind(this);
     this.handleTorrentsModal = this.handleTorrentsModal.bind(this);
     this.hideTorrentsModal = this.hideTorrentsModal.bind(this);
+    this.showImageCarousel = this.showImageCarousel.bind(this);
+    this.closeImageCarousel = this.closeImageCarousel.bind(this);
+  }
+
+  showImageCarousel() {
+    this.setState({ showImageCarousel: true })
+  }
+
+  closeImageCarousel() {
+    this.setState({ showImageCarousel: false })
   }
 
   showTrailerModal() {
@@ -85,6 +97,11 @@ class FullMovieDetails extends Component {
          { this.state.showTorrentsModal ? <TorrentsModal 
             hideTorrentsModal={this.hideTorrentsModal}
             torrents={movieDetails.torrents}/> : null }
+
+        {this.state.showImageCarousel && <ImageSwiper 
+          closeImageCarousel={this.closeImageCarousel} 
+          info={movieDetails} />}
+
         
         { this.state.loading ? <PageLoader/> : null}
         <div className="content-wrapper">
@@ -101,6 +118,7 @@ class FullMovieDetails extends Component {
           </div>
           <div className="row">
             <Screenshots 
+              showImageCarousel={this.showImageCarousel}
               showTrailerModal={this.showTrailerModal}
               info={movieDetails} 
             />
