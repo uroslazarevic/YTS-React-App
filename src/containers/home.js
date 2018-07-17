@@ -3,10 +3,7 @@ import { connect } from 'react-redux';
 import { getLatestTorrents, getPopularDownloads } from 'actions';
 import axios from 'axios';
 
-import YTSDescription from 'components/yts_description';
-import PopularDownloads from 'components/popular_downloads';
-import LatestTorrents from 'components/latest_torrents';
-import { PageLoader } from 'components/loader';
+import { YTSDescription, PopularDownloads, LatestTorrents, PageLoader } from 'components';
 
 class Home extends Component {
   constructor(props) {

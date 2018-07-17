@@ -22,8 +22,8 @@ ReactDOM.render(
       <div>
         <Switch>
           <DefaultLayout path="/movie/:title" component={MovieDetails} />
+          <DefaultLayout path="/browse-movies" component={BrowseMovies} />
           <DefaultLayout route='/' component={Home} />
-          {/* <DefaultLayout path="/browse-movies" component={BrowseMovies} /> */}
         </Switch>
       </div>
     </BrowserRouter>

@@ -15,6 +15,7 @@ import TorrentsModal from 'components/torrents_modal';
 import ImageSwiper from '../components/image_swiper';
 
 // Browse Movies Page
+import BrowseMoviesSearch from 'components/browse_movies_search';
 
 //  Shared
 import NavBar from 'components/navbar';
@@ -48,5 +49,6 @@ export {
   renderField,
   LoginForm,
   RegisterForm,
-  ImageSwiper
+  ImageSwiper,
+  BrowseMoviesSearch
 }

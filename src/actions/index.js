@@ -16,6 +16,9 @@ export const MOVIE_COMMENTS='MOVIE_COMMENTS';
 export const MOVIE_REVIEWS='MOVIE_REVIEWS';
 export const MOVIE_PARENTAL_GUIDES='MOVIE_PARENTAL_GUIDES';
 
+// Browse Movies Page
+export const BROWSE_MOVIES='BROWSE_MOVIES';
+
 export function searchMovies({ query_term = '', limit= 4 } = {}) {
   const data = {
     query_term,
@@ -141,3 +144,29 @@ export function getMovieParentalGuides({movie_id=''} ={}) {
   };
 }
 
+export function browseMovies({ 
+  query_term = '',
+  quality='',
+  genre='all',
+  minimum_rating='',
+  order_by='',
+  sort_by=''
+  } = {}) {
+
+  const data = {
+    query_term,
+    quality,
+    genre,
+    minimum_rating,
+    order_by,
+    sort_by
+  };
+
+  const stringified = qs.stringify(data);
+
+  const request= axios.get(`${ROOT_URL}list_movies.json?${stringified}`)
+  return {
+    type: BROWSE_MOVIES,
+    payload: request
+  };
+};
