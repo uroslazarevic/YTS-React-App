@@ -146,11 +146,13 @@ export function getMovieParentalGuides({movie_id=''} ={}) {
 
 export function browseMovies({ 
   query_term = '',
-  quality='',
+  quality='all',
   genre='all',
   minimum_rating='',
   order_by='',
-  sort_by=''
+  sort_by='',
+  limit=20,
+  page=1
   } = {}) {
 
   const data = {
@@ -159,7 +161,9 @@ export function browseMovies({
     genre,
     minimum_rating,
     order_by,
-    sort_by
+    sort_by,
+    limit,
+    page
   };
 
   const stringified = qs.stringify(data);

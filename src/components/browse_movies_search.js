@@ -9,6 +9,28 @@ export default class BrowseMoviesSearch extends Component {
       { value: '1080p', option: '1080p' },
       { value: '3D', option: '3D' }
     ];
+    this.genreOptions = [
+      { value: 'all', option: 'All' },
+      { value: 'action', option: 'Action' },
+      { value: 'adventure', option: 'Adventure' },
+      { value: 'animation', option: 'Animation' },
+      { value: 'biography', option: 'Biography' },
+      { value: 'comedy', option: 'Comedy' },
+      { value: 'crime', option: 'Crime' },
+      { value: 'documentary', option: 'Documentary' },
+      { value: 'drama', option: 'Drama' },
+      { value: 'family', option: 'Family' },
+      { value: 'fantasy', option: 'Fantasy' },
+      { value: 'film-noir', option: 'Film-Noir' },
+      { value: 'game-show', option: 'Game-Show' },
+      { value: 'history', option: 'History' },
+      { value: 'horror', option: 'Horror' },
+      { value: 'music', option: 'Music' },
+      { value: 'musical', option: 'Musical' },
+      { value: 'mystery', option: 'Mystery' },
+      { value: 'news', option: 'News' },
+      { value: 'reality-tv', option: 'Reality-TV' },
+    ];
     this.ratingOptions = [
       { value: 'all', option: 'All' },
       { value: 9, option: '9+'},
@@ -73,6 +95,14 @@ export default class BrowseMoviesSearch extends Component {
           <label>Quality:</label>
             <select onChange={(event) => getParams(event)} name="quality">
              {this.renderSelectOptions(this.qualityOptions)}
+            </select>
+            {this.renderSelectsArrows()}
+          </div>
+
+          <div className="genre-param">
+          <label>Genre:</label>
+            <select onChange={(event) => getParams(event)} name="genre">
+             {this.renderSelectOptions(this.genreOptions)}
             </select>
             {this.renderSelectsArrows()}
           </div>

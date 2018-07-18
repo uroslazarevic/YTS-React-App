@@ -34,7 +34,7 @@ function createCast(cast) {
     return (
       <div key={imdb_code} className="cast">
         {createCastImg(url_small_image)}
-        <div className="cast-info"><Link to={`/browse-movies/${name}`}><span>{name}</span></Link> as {character_name}</div>
+        <div className="cast-info"><span>{name}</span> as {character_name}</div>
       </div>
     )
   }))

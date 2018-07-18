@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import _ from 'lodash';
 import { browseMovies } from 'actions';
 import { RenderMovieCard, BrowseMoviesSearch, PageLoader } from 'components';
+import Pagination from 'components/pagination';
 
 class BrowseMovies extends Component {
   constructor(props) {
@@ -13,15 +14,19 @@ class BrowseMovies extends Component {
       data: {
         query_term: '',
         quality: '',
+        genre:'',
         minimum_rating: '',
         sort_by: '',
-        order_by: ''
+        order_by: '',
+        limit: 20,
+        page: 1
       }
     };
 
     this.getParams = this.getParams.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleBrowsedMovies = this.handleBrowsedMovies.bind(this);
+    this.handlePageClick = this.handlePageClick.bind(this);
   }
 
   getParams(event) {
@@ -30,33 +35,28 @@ class BrowseMovies extends Component {
   }
 
   renderHelper() {
-    const { searchedMovies: { movies, movie_count } } = this.props;
-    return (
-      <div>
-        <div className="browse-movies-title">{movie_count} YIFFY MOVIES FOUND</div>
-
-        {_.chunk(movies, 4).map(
-          (movieArrayOfFour, index) => {
-    
-          const renderArray = () => {
-            return movieArrayOfFour.map( movie => {
-              const { genres } = movie;
-              return (
-                <RenderMovieCard
-                  key={movie.id}
-                  movie={movie}
-                  genres={genres}
-                />
-              );
-            });
-            }
-          return (
-            <div key={index} className="row" style={{marginBottom: '20px' }} >
-              {renderArray()}
-            </div>
-          );
-        })}
-      </div>
+    const { searchedMovies: { movies } } = this.props;
+    return _.chunk(movies, 4).map(
+      (movieArrayOfFour, index) => {
+  
+        const renderArray = () => {
+          return movieArrayOfFour.map( movie => {
+            const { genres } = movie;
+            return (
+              <RenderMovieCard
+                key={movie.id}
+                movie={movie}
+                genres={genres}
+              />
+            );
+          });
+          }
+        return (
+          <div key={index} className="row" style={{marginBottom: '20px' }} >
+            {renderArray()}
+          </div>
+        );
+      }
     )
   }
 
@@ -66,7 +66,7 @@ class BrowseMovies extends Component {
   }
 
   handleBrowsedMovies() {
-    this.setState({ pageLoader: true, listMovies: false })
+    this.setState({ pageLoader: true })
     const { browseMovies } = this.props;
     browseMovies(this.state.data)
     .then(() => this.setState({ pageLoader: false }));
@@ -76,9 +76,14 @@ class BrowseMovies extends Component {
     const { pathname } = this.props.location;
     const searchString = pathname.split('/');
     // if searchString.length > 2 , searchString[2] === url after browse-movies
-    searchString.length === 3 ? this.setState({ data: { query_term: searchString[2]  }}, 
+    searchString.length === 3 ? this.setState({ data: { ...this.state.data, query_term: searchString[2] }}, 
     () => this.handleBrowsedMovies()) : this.handleBrowsedMovies()
-    console.log(searchString)
+  }
+
+  handlePageClick({ selected }) {
+    const nextPage = selected + 1;
+    this.setState({ data: { ...this.state.data, page: nextPage }}, 
+    () => this.handleBrowsedMovies(this.state.data))
   }
   
   componentWillMount() {
@@ -86,6 +91,9 @@ class BrowseMovies extends Component {
   }
 
  render() {
+   console.log(this.state.data.page)
+   const { searchedMovies: { movie_count } } = this.props;
+   const pageCount = Math.ceil(movie_count/this.state.data.limit);
    return (
     <div className="browse-movies">
       { this.state.pageLoader && <PageLoader /> }
@@ -101,7 +109,18 @@ class BrowseMovies extends Component {
       <div className="browse-movies-content">
         <div className="content-wrapper">
           <div className="row">
+            <div className="browse-movies-title">{movie_count} YIFFY MOVIES FOUND</div>
+            <Pagination 
+              pageCount={pageCount}
+              handlePageClick={this.handlePageClick}
+              forcePage={this.state.data.page -1}
+            />
             {this.renderHelper()}
+            <Pagination 
+              pageCount={pageCount}
+              handlePageClick={this.handlePageClick}
+              forcePage={this.state.data.page -1}
+            />
           </div>
         </div>
       </div>

@@ -4,8 +4,7 @@
     color: #6ac045;
     font-size: 1.4em;
     margin-top: 10px;
-    text-align: center;
-    padding-bottom: 90px; }
+    text-align: center; }
   .browse-movies .browse-movies-search {
     background: #171717; }
     .browse-movies .browse-movies-search form {
@@ -30,7 +29,7 @@
           -webkit-border-radius: 3px;
           background-image: none;
           padding: 10px;
-          width: 580px;
+          width: 610px;
           height: 40px;
           background: #282828; }
       .browse-movies .browse-movies-search form button {
@@ -53,7 +52,7 @@
       .browse-movies .browse-movies-search form .search-params .quality-param {
         display: inline-block;
         position: relative; }
-      .browse-movies .browse-movies-search form .search-params .orderBy-param, .browse-movies .browse-movies-search form .search-params .rating-param, .browse-movies .browse-movies-search form .search-params .sortBy-param {
+      .browse-movies .browse-movies-search form .search-params .orderBy-param, .browse-movies .browse-movies-search form .search-params .rating-param, .browse-movies .browse-movies-search form .search-params .sortBy-param, .browse-movies .browse-movies-search form .search-params .genre-param {
         position: relative;
         display: inline-block;
         margin-left: 20px; }

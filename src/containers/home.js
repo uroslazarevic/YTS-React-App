@@ -31,20 +31,20 @@ class Home extends Component {
     const { popularDownloads, latestMovies } = this.props;
 
     return (
-        <div>
-          {this.state.pageLoader ? <PageLoader /> : null }
-          <div className="home-content">
-            <div className="content-wrapper">
-                <YTSDescription />
-                <PopularDownloads popularDownloads={ popularDownloads } />
-            </div>
-          </div>
-          <div className="latest-torrents">
-            <div className=" content-wrapper">
-                <LatestTorrents latestMovies={ latestMovies } />
-            </div>
+      <div>
+        {this.state.pageLoader ? <PageLoader /> : null }
+        <div className="home-content">
+          <div className="content-wrapper">
+              <YTSDescription />
+              <PopularDownloads popularDownloads={ popularDownloads } />
           </div>
         </div>
+        <div className="latest-torrents">
+          <div className=" content-wrapper">
+              <LatestTorrents latestMovies={ latestMovies } />
+          </div>
+        </div>
+      </div>
     );
   };
 }
