@@ -787,9 +787,8 @@ a {
   height: 98px;
   line-height: 98px;
   margin: 0 auto;
-  text-align: center; }
-  .pagination:first-child {
-    margin-bottom: 15px; }
+  text-align: center;
+  margin-bottom: 15px; }
   .pagination li {
     display: inline-block;
     border: 1px solid #333;

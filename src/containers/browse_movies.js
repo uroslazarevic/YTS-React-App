@@ -1,4 +1,4 @@
-import React,{ Component } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 import { browseMovies } from 'actions';
@@ -11,6 +11,7 @@ class BrowseMovies extends Component {
 
     this.state = { 
       pageLoader: false,
+      pagination: false,
       data: {
         query_term: '',
         quality: '',
@@ -23,6 +24,8 @@ class BrowseMovies extends Component {
       }
     };
 
+    // Ukloni pojavu viska istih filmova!
+    
     this.getParams = this.getParams.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleBrowsedMovies = this.handleBrowsedMovies.bind(this);
@@ -36,16 +39,21 @@ class BrowseMovies extends Component {
 
   renderHelper() {
     const { searchedMovies: { movies } } = this.props;
-    return _.chunk(movies, 4).map(
+    const uniqueMovies = _.map(_.uniqBy(movies, 'id'), movie => {
+      return {
+        movie
+      };  
+  });
+    return _.chunk(uniqueMovies, 4).map(
       (movieArrayOfFour, index) => {
   
         const renderArray = () => {
           return movieArrayOfFour.map( movie => {
-            const { genres } = movie;
+            const { id, genres } = movie.movie;
             return (
               <RenderMovieCard
-                key={movie.id}
-                movie={movie}
+                key={id}
+                movie={movie.movie}
                 genres={genres}
               />
             );
@@ -62,6 +70,7 @@ class BrowseMovies extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    this.setState({data: { ...this.state.data, page: 1}})
     this.handleBrowsedMovies()
   }
 
@@ -69,7 +78,7 @@ class BrowseMovies extends Component {
     this.setState({ pageLoader: true })
     const { browseMovies } = this.props;
     browseMovies(this.state.data)
-    .then(() => this.setState({ pageLoader: false }));
+    .then(() => this.setState({ pageLoader: false, pagination: true }));
   }
 
   initialize() {
@@ -91,8 +100,8 @@ class BrowseMovies extends Component {
   }
 
  render() {
-   console.log(this.state.data.page)
    const { searchedMovies: { movie_count } } = this.props;
+   const { pagination } = this.state;
    const pageCount = Math.ceil(movie_count/this.state.data.limit);
    return (
     <div className="browse-movies">
@@ -110,17 +119,19 @@ class BrowseMovies extends Component {
         <div className="content-wrapper">
           <div className="row">
             <div className="browse-movies-title">{movie_count} YIFFY MOVIES FOUND</div>
+            {pagination && 
             <Pagination 
               pageCount={pageCount}
               handlePageClick={this.handlePageClick}
               forcePage={this.state.data.page -1}
-            />
+            />}
             {this.renderHelper()}
+            {pagination && 
             <Pagination 
               pageCount={pageCount}
               handlePageClick={this.handlePageClick}
               forcePage={this.state.data.page -1}
-            />
+            />}
           </div>
         </div>
       </div>

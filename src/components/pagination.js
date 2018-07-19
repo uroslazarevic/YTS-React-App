@@ -4,11 +4,12 @@ import ReactPaginate from 'react-paginate';
 export default function ({ 
   pageCount, 
   handlePageClick,
-  forcePage }) {
+  forcePage
+  }) {
   return (
     <ReactPaginate
-      previousLabel={"<<Previous"}
-      nextLabel={"Next>>"}
+      previousLabel={"Previous"}
+      nextLabel={"Next"}
       breakLabel={<a href="">...</a>}
       breakClassName={"break-me"}
       pageCount={pageCount}

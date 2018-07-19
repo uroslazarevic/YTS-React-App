@@ -61,12 +61,10 @@ export default class NavBar extends Component {
       showRegisterForm: false,
       showLoginForm: false
     })
-    console.log(this.loginForm.current)
 
   }
 
   onFormSubmit() {
-    console.log('Succesfull Submit!');
     this.setState({ showForms: false });
   }
 

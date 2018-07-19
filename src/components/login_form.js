@@ -20,14 +20,14 @@ class LoginForm extends Component {
           type="text"
           component={renderField}
           label="Username"
-          icon={<i class="fas fa-user"></i>}
+          icon={<i className="fas fa-user"></i>}
         />
         <Field
           name="password"
           type="text"
           component={renderField}
           label="Password"
-          icon={<i class="fas fa-lock"></i>}
+          icon={<i className="fas fa-lock"></i>}
         />
         <div>
           <button type="submit" className="login">

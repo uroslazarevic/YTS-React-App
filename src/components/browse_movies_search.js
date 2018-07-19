@@ -86,7 +86,7 @@ export default class BrowseMoviesSearch extends Component {
       <form onSubmit={handleSubmit}>
         <div className="search-movies" >
           <label className="search-term-title">Search Term</label>
-          <input value={query_term} onChange={getParams} name="query_term" type="text" />
+          <input autoComplete="new-password" value={query_term} onChange={getParams} name="query_term" type="text" />
         </div>
         <button type="submit" className="search-btn">Search</button>
         <div className="search-params">
