@@ -43,7 +43,8 @@
         padding: 0 10px;
         font-weight: bold;
         font-size: 13px;
-        text-decoration: none; }
+        text-decoration: none;
+        background: none !important; }
         #navbar .col-md-6:last-child .navbar-right .nav-links a:nth-child(-n+2) {
           color: #919191; }
           #navbar .col-md-6:last-child .navbar-right .nav-links a:nth-child(-n+2):hover {
@@ -647,6 +648,261 @@ a {
       transition: all 0.15s ease-in;
       color: #fff; }
 
+.forms-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(24, 24, 24, 0.8);
+  z-index: 999;
+  overflow-y: auto;
+  cursor: pointer; }
+  .forms-bg .forms {
+    background: #fff;
+    width: 600px;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translate(-50%, 0); }
+    .forms-bg .forms .switch-forms {
+      width: 600px;
+      height: 70px;
+      border-radius: .25em .25em 0 0;
+      text-align: center; }
+      .forms-bg .forms .switch-forms .login-form-title, .forms-bg .forms .switch-forms .register-form-title {
+        display: inline-block;
+        width: 50%;
+        background: #fff;
+        color: #6ac045;
+        font-weight: bold;
+        border-radius: .25em .25em 0 0;
+        cursor: pointer;
+        line-height: 70px;
+        font-size: 1.2em; }
+    .forms-bg .forms form.login-form, .forms-bg .forms form.register-form {
+      padding: 2em; }
+      .forms-bg .forms form.login-form .field, .forms-bg .forms form.register-form .field {
+        margin-bottom: 2em;
+        position: relative; }
+        .forms-bg .forms form.login-form .field .text-help, .forms-bg .forms form.register-form .field .text-help {
+          font-size: 16px; }
+        .forms-bg .forms form.login-form .field input, .forms-bg .forms form.register-form .field input {
+          color: #333;
+          font-size: 14px;
+          border-radius: .25em;
+          padding: 16px 20px 16px 50px;
+          border: 1px solid #d2d8d8;
+          width: 100%;
+          height: 50px;
+          cursor: text; }
+        .forms-bg .forms form.login-form .field .form-icon, .forms-bg .forms form.register-form .field .form-icon {
+          position: absolute;
+          left: 17px;
+          top: 14px;
+          color: #eaeaea; }
+      .forms-bg .forms form.login-form button, .forms-bg .forms form.register-form button {
+        background: #6ac045;
+        border-radius: 3px;
+        font-weight: bold;
+        color: #fff;
+        font-size: 16px;
+        width: 100%;
+        padding: 7px 0;
+        margin: 0 auto; }
+        .forms-bg .forms form.login-form button:hover, .forms-bg .forms form.register-form button:hover {
+          transition: all 300ms ease;
+          background: #5da93c; }
+
+.swiper-bg {
+  position: fixed;
+  z-index: 5;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  cursor: pointer; }
+
+.center {
+  width: 993px;
+  height: 414px;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%); }
+  .center .react-swipe-container {
+    width: 993px;
+    height: 414px; }
+    .center .react-swipe-container .item {
+      width: 993px;
+      height: 414px;
+      margin: 0 auto; }
+      .center .react-swipe-container .item .swiper-img {
+        width: 993px;
+        height: 414px; }
+  .center .swiper-controls {
+    position: absolute;
+    height: 30px;
+    width: 80px;
+    top: -30px;
+    right: 0px;
+    z-index: 6;
+    font-size: 21px; }
+    .center .swiper-controls span:first-child {
+      position: absolute;
+      top: 0;
+      right: 60px; }
+      .center .swiper-controls span:first-child .fa-angle-left {
+        transform: scale(1, 1.15);
+        color: #333; }
+        .center .swiper-controls span:first-child .fa-angle-left:hover {
+          color: #fff; }
+    .center .swiper-controls span:nth-child(2) {
+      position: absolute;
+      top: 0;
+      right: 35px; }
+      .center .swiper-controls span:nth-child(2) .fa-angle-right {
+        transform: scale(1, 1.15);
+        color: #333; }
+        .center .swiper-controls span:nth-child(2) .fa-angle-right:hover {
+          color: #fff; }
+    .center .swiper-controls span:last-child {
+      position: absolute;
+      top: 0;
+      right: 10px; }
+      .center .swiper-controls span:last-child .fa-times {
+        transform: scale(1, 1);
+        color: #333; }
+        .center .swiper-controls span:last-child .fa-times:hover {
+          color: #fff; }
+
 /* Full Movie Details Container */
 .bg-full-movie-details {
   background: #353333; }
+
+.pagination {
+  display: block !important;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 900px;
+  height: 98px;
+  line-height: 98px;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 15px; }
+  .pagination li {
+    display: inline-block;
+    border: 1px solid #333;
+    border-radius: 3px;
+    font-weight: bold;
+    transition: all .2s ease-in-out;
+    font-size: 14px;
+    margin-left: 5px;
+    line-height: initial; }
+    .pagination li.active {
+      color: #fff;
+      background: #5da93c;
+      border-color: #5da93c; }
+    .pagination li.break-me {
+      pointer-events: none;
+      cursor: pointer; }
+    .pagination li a {
+      color: #fff;
+      display: block;
+      padding: 10px 13px !important; }
+      .pagination li a:focus {
+        outline: none; }
+    .pagination li:hover {
+      color: #fff;
+      background: #5da93c;
+      border-color: #5da93c; }
+  .pagination .break a {
+    cursor: default; }
+
+.browse-movies {
+  padding-top: 105px; }
+  .browse-movies .browse-movies-title {
+    color: #6ac045;
+    font-size: 1.4em;
+    margin-top: 10px;
+    text-align: center; }
+  .browse-movies .browse-movies-search {
+    background: #171717; }
+    .browse-movies .browse-movies-search form {
+      width: 750px;
+      margin: 0 auto; }
+      .browse-movies .browse-movies-search form input:focus, .browse-movies .browse-movies-search form select:focus {
+        outline-width: 0; }
+      .browse-movies .browse-movies-search form .search-movies {
+        display: inline-block;
+        margin-bottom: 15px; }
+        .browse-movies .browse-movies-search form .search-movies label {
+          display: block;
+          margin-bottom: 10px;
+          font-weight: 700;
+          font-size: 1.35em;
+          color: #5a5a5a; }
+        .browse-movies .browse-movies-search form .search-movies input {
+          border: 0;
+          color: #a2a2a2;
+          border-radius: 3px;
+          -moz-border-radius: 3px;
+          -webkit-border-radius: 3px;
+          background-image: none;
+          padding: 10px;
+          width: 610px;
+          height: 40px;
+          background: #282828; }
+      .browse-movies .browse-movies-search form button {
+        display: inline-block;
+        font-weight: bold;
+        color: #fff;
+        font-size: 16px;
+        width: 100px;
+        height: 36px;
+        transition: all 300ms ease;
+        text-align: center;
+        background: #6ac045;
+        margin-left: 20px;
+        border-radius: 3px;
+        border: none; }
+        .browse-movies .browse-movies-search form button:hover {
+          background: #5da93c; }
+      .browse-movies .browse-movies-search form .search-params label, .browse-movies .browse-movies-search form .search-params select {
+        display: block; }
+      .browse-movies .browse-movies-search form .search-params .quality-param {
+        display: inline-block;
+        position: relative; }
+      .browse-movies .browse-movies-search form .search-params .orderBy-param, .browse-movies .browse-movies-search form .search-params .rating-param, .browse-movies .browse-movies-search form .search-params .sortBy-param, .browse-movies .browse-movies-search form .search-params .genre-param {
+        position: relative;
+        display: inline-block;
+        margin-left: 20px; }
+      .browse-movies .browse-movies-search form .search-params label {
+        margin-bottom: 10px;
+        font-weight: 700;
+        font-size: .9em;
+        color: #5a5a5a; }
+      .browse-movies .browse-movies-search form .search-params select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background: #282828;
+        border-radius: 3px;
+        width: 130px;
+        padding-left: 10px;
+        height: 40px;
+        color: #a2a2a2;
+        font-size: .9em;
+        font-weight: normal;
+        overflow: hidden;
+        border: 0; }
+      .browse-movies .browse-movies-search form .fas {
+        position: absolute;
+        color: #fff;
+        transform: scale(0.7, 1.2);
+        color: #5a5a5a;
+        right: 10px; }
+      .browse-movies .browse-movies-search form .fa-caret-up {
+        top: 38px; }
+      .browse-movies .browse-movies-search form .fa-caret-down {
+        top: 49px; }
+  .browse-movies .browse-movies-content {
+    background-color: #1d1d1d; }

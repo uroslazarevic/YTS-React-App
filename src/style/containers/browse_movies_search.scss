@@ -1,0 +1,128 @@
+.browse-movies {
+  padding-top: 105px;
+
+  .browse-movies-title {
+    color: #6ac045;
+    font-size: 1.4em;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .browse-movies-search {
+    background: #171717;
+  
+    form {
+      width: 750px;
+      margin: 0 auto;
+  
+      input:focus, select:focus {
+        outline-width: 0;
+      }
+  
+      .search-movies {
+        display: inline-block;
+        margin-bottom: 15px;
+  
+        label {
+          display: block;
+          margin-bottom: 10px;
+          font-weight: 700;
+          font-size: 1.35em;
+          color: #5a5a5a;
+        }
+    
+        input {
+          border: 0;
+          color: #a2a2a2;
+          border-radius: 3px;
+          -moz-border-radius: 3px;
+          -webkit-border-radius: 3px;
+          background-image: none;
+          padding: 10px;
+          width: 610px;
+          height: 40px;
+          background: #282828;
+        }
+      }
+  
+      button {
+        display: inline-block;
+        font-weight: bold;
+        color: #fff;
+        font-size: 16px;
+        width: 100px;
+        height: 36px;
+        transition: all 300ms ease;
+        text-align: center;
+        background: #6ac045;
+        margin-left: 20px;
+        border-radius: 3px;
+        border: none;
+  
+        &:hover {
+          background: #5da93c;
+        }
+      }
+  
+      .search-params {
+        
+        label, select {
+          display: block;
+        }
+    
+        .quality-param {
+          display: inline-block;
+          position: relative;
+        }
+    
+        .orderBy-param, .rating-param, .sortBy-param, .genre-param {
+          position: relative;
+          display: inline-block;
+          margin-left: 20px;
+        } 
+    
+        label {
+          margin-bottom: 10px;
+          font-weight: 700;
+          font-size: .9em;
+          color: #5a5a5a;
+        }
+    
+        select {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          background: #282828;
+          border-radius: 3px;
+          width: 130px;
+          padding-left: 10px;
+          height: 40px;
+          color: #a2a2a2;
+          font-size: .9em;
+          font-weight: normal;
+          overflow: hidden;
+          border: 0;
+        }
+      }
+  
+      .fas {
+        position: absolute;
+        color: #fff;
+        transform: scale(0.7, 1.2);
+        color: #5a5a5a;
+        right: 10px;
+      }
+  
+      .fa-caret-up {
+        top: 38px;
+      }
+  
+      .fa-caret-down {
+        top: 49px;
+      }
+    }
+  }
+  
+  .browse-movies-content {
+    background-color: #1d1d1d;
+  }
+}

@@ -1,0 +1,60 @@
+.swiper-bg {
+  position: fixed;
+  z-index: 5;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  cursor: pointer; }
+
+.center {
+  width: 993px;
+  height: 414px;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%); }
+  .center .react-swipe-container {
+    width: 993px;
+    height: 414px; }
+    .center .react-swipe-container .item {
+      width: 993px;
+      height: 414px;
+      margin: 0 auto; }
+      .center .react-swipe-container .item .swiper-img {
+        width: 993px;
+        height: 414px; }
+  .center .swiper-controls {
+    position: absolute;
+    height: 30px;
+    width: 80px;
+    top: -30px;
+    right: 0px;
+    z-index: 6;
+    font-size: 21px; }
+    .center .swiper-controls span:first-child {
+      position: absolute;
+      top: 0;
+      right: 60px; }
+      .center .swiper-controls span:first-child .fa-angle-left {
+        transform: scale(1, 1.15);
+        color: #333; }
+        .center .swiper-controls span:first-child .fa-angle-left:hover {
+          color: #fff; }
+    .center .swiper-controls span:nth-child(2) {
+      position: absolute;
+      top: 0;
+      right: 35px; }
+      .center .swiper-controls span:nth-child(2) .fa-angle-right {
+        transform: scale(1, 1.15);
+        color: #333; }
+        .center .swiper-controls span:nth-child(2) .fa-angle-right:hover {
+          color: #fff; }
+    .center .swiper-controls span:last-child {
+      position: absolute;
+      top: 0;
+      right: 10px; }
+      .center .swiper-controls span:last-child .fa-times {
+        transform: scale(1, 1);
+        color: #333; }
+        .center .swiper-controls span:last-child .fa-times:hover {
+          color: #fff; }

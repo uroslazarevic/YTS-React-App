@@ -7,14 +7,13 @@ const ROOT_URL='https://yts.am/api/v2/';
 export const SEARCH_MOVIES='SEARCH_MOVIES';
 export const POPULAR_DOWNLOADS='POPULAR_DOWNLOADS';
 export const LATEST_TORRENTS='LATEST_TORRENTS';
-export const UPCOMING_MOVIES='UPCOMING_MOVIES';
 
 // Full Movie Details page
 export const FULL_MOVIE_DETAILS='FULL_MOVIE_DETAILS';
 export const MOVIE_SUGGESTIONS='MOVIE_SUGGESTIONS';
-export const MOVIE_COMMENTS='MOVIE_COMMENTS';
-export const MOVIE_REVIEWS='MOVIE_REVIEWS';
-export const MOVIE_PARENTAL_GUIDES='MOVIE_PARENTAL_GUIDES';
+
+// Browse Movies Page
+export const BROWSE_MOVIES='BROWSE_MOVIES';
 
 export function searchMovies({ query_term = '', limit= 4 } = {}) {
   const data = {
@@ -58,17 +57,6 @@ export function getLatestTorrents({limit = 8, sort_by = 'date_added'} = {}) {
   };
 };
 
-export function getUpcomingMovies({limit= 4} = {}) {
-  const data = { limit };
-  const stringified = qs.stringify(data);
-
-  const request = axios.get(`${ROOT_URL}list_upcoming.json${stringified}`)
-  return {
-    type: UPCOMING_MOVIES,
-    payload: request
-  }
-}
-
 export function getFullMovieDetails({movie_id='', with_images='true', with_cast='true'} ={}) {
   const data = { 
     movie_id,
@@ -99,45 +87,33 @@ export function getMovieSuggestions({movie_id=''} ={}) {
   };
 }
 
-export function getMovieComments({movie_id=''} ={}) {
-  const data = { 
-    movie_id,
-  };
-  const stringified = qs.stringify(data);
-  
-  const response = axios.get(`${ROOT_URL}movie_comments.json?${stringified}`);
-  
-  return {
-    type: MOVIE_COMMENTS,
-    payload: response
-  };
-}
+export function browseMovies({ 
+  query_term = '',
+  quality='all',
+  genre='all',
+  minimum_rating='',
+  order_by='',
+  sort_by='',
+  limit=20,
+  page=1
+  } = {}) {
 
-export function getMovieReviews({movie_id=''} ={}) {
-  const data = { 
-    movie_id,
+  const data = {
+    query_term,
+    quality,
+    genre,
+    minimum_rating,
+    order_by,
+    sort_by,
+    limit,
+    page
   };
-  const stringified = qs.stringify(data);
-  
-  const response = axios.get(`${ROOT_URL}movie_reviews.json?${stringified}`);
-  
-  return {
-    type: MOVIE_REVIEWS,
-    payload: response
-  };
-}
 
-export function getMovieParentalGuides({movie_id=''} ={}) {
-  const data = { 
-    movie_id,
-  };
   const stringified = qs.stringify(data);
-  
-  const response = axios.get(`${ROOT_URL}movie_parental_guides.json?${stringified}`);
-  
-  return {
-    type: MOVIE_PARENTAL_GUIDES,
-    payload: response
-  };
-}
 
+  const request= axios.get(`${ROOT_URL}list_movies.json?${stringified}`)
+  return {
+    type: BROWSE_MOVIES,
+    payload: request
+  };
+};

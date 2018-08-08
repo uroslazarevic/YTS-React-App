@@ -1,15 +1,16 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
 import { NavBar, Footer } from 'components';
 
-export default function({component: Component, ...rest}) {
+const Layout = props => {
    return (
-     <Route {...rest} render = {matchProps => (
-       <div>
+      <div>
         <NavBar />
-        <Component {...matchProps} />
+        <main>
+          {props.children}
+        </main>
         <Footer />
-       </div>
-     )} />
+      </div>
    );
 };
+
+export default Layout;

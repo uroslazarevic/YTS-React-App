@@ -1,0 +1,87 @@
+
+.swiper-bg {
+  position: fixed;
+  z-index: 5;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+}
+.center {
+  width: 993px;
+  height: 414px;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+
+  .react-swipe-container {
+    width: 993px;
+    height: 414px;
+    
+    .item {
+      width: 993px;
+      height: 414px;
+      margin: 0 auto;
+      
+      .swiper-img {
+        width: 993px;
+        height: 414px;
+      }
+    }
+  }
+  .swiper-controls {
+    position: absolute;
+    height: 30px;
+    width: 80px;
+    top: -30px;
+    right: 0px;
+    z-index: 6;
+    font-size: 21px;
+
+    span:first-child {
+      position: absolute;
+      top: 0;
+      right: 60px;
+  
+      .fa-angle-left {
+        transform: scale(1, 1.15);
+        color: #333;
+
+        &:hover {
+          color: #fff;
+        }
+      }
+      
+    }
+    span:nth-child(2) {
+      position: absolute;
+      top: 0;
+      right: 35px;
+  
+      .fa-angle-right {
+        transform: scale(1, 1.15);
+        color: #333;
+
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  
+    span:last-child {
+      position: absolute;
+      top: 0;
+      right: 10px;
+      
+      .fa-times {
+        transform: scale(1, 1 );
+        color: #333;
+
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+}

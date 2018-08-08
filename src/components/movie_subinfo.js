@@ -1,6 +1,5 @@
 import React from 'react';
 import noImg from 'images/image.png';
-import { Link } from 'react-router-dom';
 
 export default function({ info }) {
   const { description_full, cast } = info;
@@ -34,7 +33,7 @@ function createCast(cast) {
     return (
       <div key={imdb_code} className="cast">
         {createCastImg(url_small_image)}
-        <div className="cast-info"><Link to={`/browse-movies/${name}`}><span>{name}</span></Link> as {character_name}</div>
+        <div className="cast-info"><span>{name}</span> as {character_name}</div>
       </div>
     )
   }))

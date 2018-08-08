@@ -24,24 +24,24 @@ class SearchBar extends Component {
   handleSearchTermChange(event) {
     event.persist();
     const value = event.target.value;
-    this.setState({ searchLoader: true, inputTerm: value })
-    this.inputSearchTerm(value)
+    this.setState({ searchLoader: true, inputTerm: value });
+    this.inputSearchTerm(value);
   }
  
   inputSearchTerm(value) {
     // Condition for not rendering movies if the search string is ''
     value.length >= 1 ? this.props.searchMovies( { query_term: value} )
-    .then(() => this.setState({ searchLoader: false, showMovieList: true })) : this.setState({ searchLoader: false, showMovieList: false })
+    .then(() => this.setState({ searchLoader: false, showMovieList: true })) : this.setState({ searchLoader: false, showMovieList: false });
   }
 
   showMovieList(event) {
     this.searchBar.current.contains(event.target) ?  this.setState({ showMovieList: true })
-     : this.setState({ showMovieList: false })
+     : this.setState({ showMovieList: false });
   }
 
   handleSearchTermFocus(event) {
     event.stopPropagation();
-    this.setState({ showMovieList: true })
+    this.setState({ showMovieList: true });
   }
 
   componentDidMount() {
@@ -49,7 +49,7 @@ class SearchBar extends Component {
   }
 
   componentWillUnmount() {
-    document.removeEventListener('click');
+    document.removeEventListener('click', this.showMovieList);
   }
 
   // Need to use this func to reset inputTerm!

@@ -12,13 +12,19 @@ import Screenshots from 'components/screenshots';
 import MovieSubinfo from 'components/movie_subinfo';
 import MovieTrailerModal from 'components/movie_trailer_modal';
 import TorrentsModal from 'components/torrents_modal';
+import ImageSwiper from '../components/image_swiper';
 
 // Browse Movies Page
+import BrowseMoviesSearch from 'components/browse_movies_search';
 
 //  Shared
 import NavBar from 'components/navbar';
 import Footer from 'components/footer';
 import SearchedMovies from 'components/searched_movies';
+import validate from 'components/validate_form';
+import renderField from 'components/renderField';
+import LoginForm from 'components/login_form';
+import RegisterForm from 'components/register_form';
 // Loaders
 import { PageLoader, SearchLoader } from 'components/loader';
 
@@ -38,5 +44,11 @@ export {
   Footer,
   SearchedMovies,
   PageLoader,
-  SearchLoader
+  SearchLoader,
+  validate,
+  renderField,
+  LoginForm,
+  RegisterForm,
+  ImageSwiper,
+  BrowseMoviesSearch
 }

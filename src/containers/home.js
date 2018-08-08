@@ -3,10 +3,7 @@ import { connect } from 'react-redux';
 import { getLatestTorrents, getPopularDownloads } from 'actions';
 import axios from 'axios';
 
-import YTSDescription from 'components/yts_description';
-import PopularDownloads from 'components/popular_downloads';
-import LatestTorrents from 'components/latest_torrents';
-import { PageLoader } from 'components/loader';
+import { YTSDescription, PopularDownloads, LatestTorrents, PageLoader } from 'components';
 
 class Home extends Component {
   constructor(props) {
@@ -16,6 +13,7 @@ class Home extends Component {
   }
 
   initialize() {
+    this.setState({ pageLoader: true });
     const {getPopularDownloads, getLatestTorrents} = this.props;
     axios.all([
       getPopularDownloads(),
@@ -26,7 +24,6 @@ class Home extends Component {
   }
 
   componentWillMount() {
-    this.setState({ pageLoader: true });
     this.initialize();
   }
 
@@ -34,20 +31,20 @@ class Home extends Component {
     const { popularDownloads, latestMovies } = this.props;
 
     return (
-        <div>
-          {this.state.pageLoader ? <PageLoader /> : null }
-          <div className="home-content">
-            <div className="content-wrapper">
-                <YTSDescription />
-                <PopularDownloads popularDownloads={ popularDownloads } />
-            </div>
-          </div>
-          <div className="latest-torrents">
-            <div className=" content-wrapper">
-                <LatestTorrents latestMovies={ latestMovies } />
-            </div>
+      <div>
+        {this.state.pageLoader ? <PageLoader /> : null }
+        <div className="home-content">
+          <div className="content-wrapper">
+              <YTSDescription />
+              <PopularDownloads popularDownloads={ popularDownloads } />
           </div>
         </div>
+        <div className="latest-torrents">
+          <div className=" content-wrapper">
+              <LatestTorrents latestMovies={ latestMovies } />
+          </div>
+        </div>
+      </div>
     );
   };
 }
