@@ -7,7 +7,7 @@ class LoginForm extends Component {
   
   render() {
     const {handleSubmit, onFormSubmit} = this.props;
-
+    console.log(this.props)
     return (
       <form 
         className="login-form"

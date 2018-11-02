@@ -50,7 +50,6 @@ export default class BrowseMoviesSearch extends Component {
       { value: 'peers', option: 'Peers' },
       { value: 'year', option: 'Year' },
       { value: 'like_count', option: 'Likes' },
-      { value: 'alphabetical', option: 'Alphabetical' },
       { value: 'download_count', option: 'Downloads' }
     ]; 
     this.orderByOptions = [

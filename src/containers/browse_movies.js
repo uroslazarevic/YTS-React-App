@@ -24,8 +24,6 @@ class BrowseMovies extends Component {
       }
     };
 
-    // Ukloni pojavu viska istih filmova!
-    
     this.getParams = this.getParams.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleBrowsedMovies = this.handleBrowsedMovies.bind(this);
@@ -89,7 +87,20 @@ class BrowseMovies extends Component {
     () => this.handleBrowsedMovies()) : this.handleBrowsedMovies()
   }
 
+  displayPaginateBtns(currentPage) {
+    const { searchedMovies: { movie_count } } = this.props;
+    const pageCount = Math.ceil(movie_count/this.state.data.limit);
+
+    const previousBtn = document.querySelector('.previous');
+    const nextBtn = document.querySelector('.next');
+    currentPage === 0 ? previousBtn.style.opacity="0" : previousBtn.style.opacity="1";
+    currentPage === 0 ? previousBtn.style.pointerEvents="none" : previousBtn.style.pointerEvents="initial";
+    currentPage === pageCount-1 ? nextBtn.style.opacity="0" : nextBtn.style.opacity="1";
+    currentPage === pageCount-1 ? nextBtn.style.pointerEvents="none" : nextBtn.style.pointerEvents="initial";
+  }
+
   handlePageClick({ selected }) {
+    this.displayPaginateBtns(selected);
     const nextPage = selected + 1;
     this.setState({ data: { ...this.state.data, page: nextPage }}, 
     () => this.handleBrowsedMovies(this.state.data))

@@ -80,6 +80,7 @@ class FullMovieDetails extends Component {
   componentWillReceiveProps(newProps) {
     const  oldId  = this.props.location.state.id;
     const  newId  = newProps.location.state.id;
+    console.log('Old id:',oldId,'New id:', newId)
     if(newId !== oldId) {
       this.initialize(newId);
     }

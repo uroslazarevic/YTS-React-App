@@ -76,7 +76,7 @@ export default class NavBar extends Component {
           <div className="row">
             <div className="col-md-6">
               <div className="logo">
-                <img src={logo} alt='logo' />
+              <Link to='/'><img src={logo} alt='logo' /></Link>
                 <span>HD movies at the smallest file size</span>
               </div>
             </div>

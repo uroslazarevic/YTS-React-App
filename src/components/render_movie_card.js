@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 
 export default function (props) {
   const { movie, genres, quality } = props;
-  const title = movie.url.split('https://yts.am/movie/').slice(1, 2);
-
+  const title = movie.url.split('https://yts.ag/movie/').slice(1, 2);
+console.log(title)
   return (
     <div className="col-md-3 col-lg-3">
-      <Link to={{ pathname:`/movie/${title}`, state: { id: movie.id } }} >
+      <Link className="detail-movie-link" to={{ pathname:`/movie/${title}`, state: { id: movie.id } }} >
         <div className="detail-movie">
           {renderMovieQuality(quality)}
           <div className="detail-img">
@@ -25,7 +25,7 @@ export default function (props) {
         </div>
       </Link>
     </div> 
-);
+  );
 };
 
 function renderMovieQuality(quality) {

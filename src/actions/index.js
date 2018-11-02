@@ -1,7 +1,9 @@
 import axios from 'axios';
 import qs from 'qs';
 
-const ROOT_URL='https://yts.am/api/v2/';
+const ROOT_URL='https://yts.ag/api/v2/';
+// https://yts.ag/api/v2/
+// https://yts.am/api/v2/
 
 // Home page
 export const SEARCH_MOVIES='SEARCH_MOVIES';

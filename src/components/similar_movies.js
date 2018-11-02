@@ -5,7 +5,7 @@ export default class SimilarMovies extends Component {
 
   renderSimilarMovie(similar) {
     return similar.map(movie => {
-      const title = movie.url.split('https://yts.am/movie/').slice(1, 2);
+      const title = movie.url.split('https://yts.ag/movie/').slice(1, 2);
 
       return (
         <div key={title} className="similar-movie-card">

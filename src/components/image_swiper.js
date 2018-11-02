@@ -4,10 +4,6 @@ import ReactSwipe from 'react-swipe';
 
 const query = querystring.parse(window.location.search.slice(1));
 
-
-
-
-
 export default class screenshotSwiper extends Component {
   constructor(props) {
     super(props);
@@ -45,7 +41,6 @@ export default class screenshotSwiper extends Component {
 
   swiperOptions() {
     // change Swipe.js options by query params
-
     const startSlide = parseInt(query.startSlide, 10) || 0;
     return {
       startSlide: startSlide < this.generateSlidePanes().length && startSlide >= 0 ? startSlide : 0,

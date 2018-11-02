@@ -7,7 +7,8 @@
     display: inline-block;
     width: 31%;
     float: left;
-    position: relative; }
+    position: relative;
+    cursor: pointer; }
     .screenshots .screenshot:hover {
       transition: opacity .15s ease-in-out;
       opacity: 0.65; }

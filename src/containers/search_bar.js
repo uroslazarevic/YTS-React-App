@@ -18,7 +18,7 @@ class SearchBar extends Component {
     this.handleSearchTermChange = this.handleSearchTermChange.bind(this);
     this.inputSearchTerm = _.debounce( this.inputSearchTerm.bind(this), 250 );
     this.showMovieList = this.showMovieList.bind(this);
-    this.handleSearchTermFocus= this.handleSearchTermFocus.bind(this);
+    this.handleSearchTermFocus= this.handleSearchTermFocus.bind(this); //Nema primenu
   };
 
   handleSearchTermChange(event) {
@@ -35,11 +35,13 @@ class SearchBar extends Component {
   }
 
   showMovieList(event) {
+    console.log(this.searchBar.current.contains(event.target), (this.searchBar.current), 'event-target:', event.target)
+    // If this.searchBar contains element=event.target as an own child
     this.searchBar.current.contains(event.target) ?  this.setState({ showMovieList: true })
      : this.setState({ showMovieList: false });
   }
 
-  handleSearchTermFocus(event) {
+  handleSearchTermFocus(event) { //Nema primenu
     event.stopPropagation();
     this.setState({ showMovieList: true });
   }
